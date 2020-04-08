@@ -12,11 +12,11 @@ config({
 client.on("ready", () =>{
     console.log(`I am online, my name is ${client.user.username}`);
     client.user.setPresence({
-        game:{
+        game: {
             name: "being developed",
             type: "WATCHING"
         }
-    })
+    });
 
 });
 
