@@ -1,7 +1,7 @@
-const Discord = require('discord.js');
+const { Client, RichEmbed } = require("discord.js");
 const { config } = require("dotenv");
 
-const bot = new Discord.Client({
+const client = new Client({
     disableEveryone: true
     });
 
@@ -9,9 +9,9 @@ config({
     pah: __dirname + "/.env"
 });
 
-bot.on("ready", () =>{
-    console.log(`I am online, my name is ${bot.user.username}`);
-    bot.user.setPresence({
+client.on("ready", () =>{
+    console.log(`I am online, my name is ${client.user.username}`);
+    client.user.setPresence({
         game:{
             name: "being developed",
             type: "WATCHING"
@@ -20,10 +20,10 @@ bot.on("ready", () =>{
 
 });
 
-bot.on('message', async message =>{
+client.on('message', async message =>{
     const prefix = "_";
     if (message.author.bot) return;
-    if(message.guild) return;
+    if(!message.guild) return;
     if(!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
@@ -32,7 +32,23 @@ bot.on('message', async message =>{
         const msg = await message.channel.send('Pong');
     }
 
+    if(cmd === "say"){
+        if(message.deletable) message.delete();
+        if(args.length < 1) return message.reply("Nothing to say?").then(m => m.delete(5000));
+
+        const roleColor = message.guild.me.displayHexColor === "#000000" ? "#ffffff" : message.guild;
+        if(args[0].toLowerCase() === "embed"){
+            const embed = new RichEmbed()
+                .setColor(roleColor)
+                .setDescription(args.slice(1).join(" "));
+
+            message.channel.send(embed);
+        }else{
+            message.channel.send(args[0]);
+        }
+    }
+
 });
 
 
-bot.login(process.env.TOKEN);
+client.login(process.env.TOKEN);
