@@ -1,7 +1,7 @@
 # discord-bot
 My first discord bot. Written in Javascript with NodeJs and DiscordJs
 
-**Commands**
+# Commands
 
 Command | Action | Optional Tags | Optional Tag functionality | Currently functional
 --------|--------|---------------|--------------------------- | --------------------
@@ -17,3 +17,5 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 **Help** | Lists all commands | *N/A* | *N/A* | **NO**
 
 For comments, questions or suggestions please contact Jacob B through discord or comment on this github repo
+
+# Dev plans
