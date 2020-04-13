@@ -10,7 +10,7 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 **Hours** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES without tags**
 **Open** | Sends if spaces are open/when they open/close | irl, irl2 | sends for specified space | **NO**
 **Machines** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
- | | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group 
+| | | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group 
 
 * Machines (subset)
   * Lists Machines with docs with optional subset tag
