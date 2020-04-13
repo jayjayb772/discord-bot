@@ -11,20 +11,9 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 **Open** | Sends if spaces are open/when they open/close | irl, irl2 | sends for specified space | **NO**
 **Machines** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
 | | | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group 
+**Software** | lists software used | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
+**StaffOn** | Lists Staff on | discordRole | specify what specialty you need | **NO**
+**Upcoming** | Lists upcoming events | irl, irl2 | specifies space | **NO**
+**Help** | Lists all commands | *N/A* | *N/A* | **NO**
 
-* Machines (subset)
-  * Lists Machines with docs with optional subset tag
-
-* Software (subset)
-  * Lists Software used with optional subset tag
-
-* StaffOn (role)
-  * Lists Staff on with optional rol tag for specific help
-
-* Upcoming
-  * Lists upcoming events
-
-* Help
-  * Lists all commands
-
-
+For comments, questions or suggestions please contact Jacob B through discord or comment on this github repo
