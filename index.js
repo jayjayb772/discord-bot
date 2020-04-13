@@ -4,6 +4,7 @@ const environment = "prod";
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
+const {checkMessage} = require("./automodFeatures");
 
 
 //Commands
@@ -32,11 +33,13 @@ client.on("ready", () =>{
 
 
 client.on('message', async message =>{
-
     const prefix = "irl!";
     if (message.author.bot) return;
     if(!message.guild) return;
-    if(!message.content.startsWith(prefix)) return;
+    if(!message.content.startsWith(prefix)){
+        await checkMessage(message, environment);
+        return;
+    }
 
     if(message.content.startsWith(prefix) && !message.author.bot){
         console.log(`${message.author.username} said ${message.content}`);
@@ -50,7 +53,7 @@ client.on('message', async message =>{
             break;
 
         case "say":
-            await say(message, args);
+            await say(message, args, environment);
             break;
 
         case "quote":

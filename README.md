@@ -9,7 +9,8 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 --------|--------|---------------|--------------------------- | --------------------
 **say (embed) str** | Repeats back Str | embed | embeds Str | **YES**
 **quote** | Pulls random quote from [Adafruits quote API page](adafruit.com/quotes.php) | *N/A* | *N/A* | **YES**
-**hours (space)** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
+**hours (space) *n*** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
+hours (cont.) | | n, normal | Implemented for COVID-19 to get normal hours of operation | **YES**
 **site** | links to the [irl site](http://irl.depaul.edu/) | *N/A* | *N/A* | **YES**
 **machines (subset) (space)** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
 machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
@@ -29,4 +30,4 @@ This bot will live in the IRL discord server and handle most IRL related things.
 1. Upcoming
 
 # Dev notes
-I'm working on learning the DiscordJs package and making discord bots. This is my first real discord bot project so it will take some time to work out bugs and get it to full functionality. I'm using **dotenv** for bot token and other api secrets storage to keep them off github and make switching between testing and production much simpler.
+I'm working on learning the DiscordJs package and making discord bots. This is my first real discord bot project so it will take some time to work out bugs and get it to full functionality. I'm using **dotenv** for bot token and other api secrets storage to keep them off github and make switching between testing and production much simpler. The bot has Auto-moderator features that will flag messages with banned words and send a notification to managers.
