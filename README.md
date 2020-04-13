@@ -7,7 +7,7 @@ My first discord bot. Written in Javascript with NodeJs and DiscordJs
 
 Command | Action | Optional Tags | Optional Tag functionality | Currently functional
 --------|--------|---------------|--------------------------- | --------------------
-**say (embed) str** | Repeats back Str with optional Embed keyword | embed | embeds Str | **YES**
+**say (embed) str** | Repeats back Str | embed | embeds Str | **YES**
 **quote** | Pulls random quote from [Adafruits quote API page](adafruit.com/quotes.php) | *N/A* | *N/A* | **YES**
 **hours (space)** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
 **site** | links to the [irl site](http://irl.depaul.edu/) | *N/A* | *N/A* | **YES**
