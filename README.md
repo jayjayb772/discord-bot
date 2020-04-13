@@ -20,6 +20,14 @@ For comments, questions or suggestions please contact Jacob B through discord or
 
 # Future plans
 This bot will live in the IRL discord server and handle most IRL related things. I'm working on gettting all listed commands functional. The ones that will take the longest are the machine and software commands due to the need to scrape info from the [IRL website](http://irl.depaul.edu/equipment-and-resources/) or type everything into a repeatable JSON file to easily have the bot send, most likely the latter.
+## command development order
+* Help
+* Hours
+* Open
+* StaffOn
+* Software
+* Machines
+* Upcoming
 
 # Dev notes
 I'm working on learning the DiscordJs package and making discord bots. This is my first real discord bot project so it will take some time to work out bugs and get it to full functionality. I'm using **dotenv** for bot token and other api secrets storage to keep them off github and make switching between testing and production much simpler.
