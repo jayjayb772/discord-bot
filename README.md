@@ -14,7 +14,7 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 **machines (subset) (space)** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
 machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
 **software (subset)** | lists software used | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
-**staff (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **NO**
+**staff (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **YES**
 **upcoming (space)** | Lists upcoming events | irl, irl2 | specifies space | **NO**
 **help** | Lists all commands | *N/A* | *N/A* | **YES**
 
@@ -24,7 +24,6 @@ For comments, questions or suggestions please contact Jacob B through discord or
 This bot will live in the IRL discord server and handle most IRL related things. I'm working on gettting all listed commands functional. The ones that will take the longest are the machine and software commands due to the need to scrape info from the [IRL website](http://irl.depaul.edu/equipment-and-resources/) or type everything into a repeatable JSON file to easily have the bot send, most likely the latter.
 
 ### Command Development Order
-1. Staff
 1. Software
 1. Machines
 1. Upcoming

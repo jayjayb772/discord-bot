@@ -1,9 +1,10 @@
-const environment = "dev";
-//const environment = "prod";
+//const environment = "dev";
+const environment = "prod";
 
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
+const {staff} = require("./commands/cmdStaff");
 
 
 //Commands
@@ -73,7 +74,7 @@ client.on('message', async message =>{
             break;
 
         case "staff":
-            notFunctional(message);
+            await staff(message,args, environment);
             break;
 
         case "upcoming":
