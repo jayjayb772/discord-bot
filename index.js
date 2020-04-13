@@ -4,7 +4,6 @@ const environment = "prod";
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
-const {staff} = require("./commands/cmdStaff");
 
 
 //Commands
@@ -13,6 +12,7 @@ const {notFunctional, notCMD} = require("./commands/cmdErrors");
 const {help, site} = require("./commands/cmdHelp");
 const {hours} = require("./commands/cmdHours");
 const {say} = require("./commands/cmdSay");
+const {staff} = require("./commands/cmdStaff");
 
 
 const client = new Client({
