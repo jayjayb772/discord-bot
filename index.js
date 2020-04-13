@@ -66,11 +66,11 @@ client.on('message', async message =>{
             break;
 
         case "machines":
-            notFunctional(message);
+            await notFunctional(message);
             break;
 
         case "software":
-            notFunctional(message);
+            await notFunctional(message);
             break;
 
         case "staff":
@@ -78,11 +78,11 @@ client.on('message', async message =>{
             break;
 
         case "upcoming":
-            notFunctional(message);
+            await notFunctional(message);
             break;
 
         default:
-            notCMD(message);
+            await notCMD(message);
     }
 
 });
