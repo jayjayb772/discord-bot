@@ -1,5 +1,5 @@
-//const environment = "dev";
-const environment = "prod";
+const environment = "dev";
+//const environment = "prod";
 
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");

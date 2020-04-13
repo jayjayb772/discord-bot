@@ -18,7 +18,7 @@ const help = function(message, args){
 
 const site = function(message){
     if(message.deletable) message.delete();
-    message.channel.send("[IRL WEBSITE](http://irl.depaul.edu/)");
+    message.channel.send(new MessageEmbed().setTitle("IRL WEBSITE").setURL("http://irl.depaul.edu/"));
 }
 
 exports.help = help;
