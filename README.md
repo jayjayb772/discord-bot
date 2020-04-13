@@ -2,19 +2,21 @@
 My first discord bot. Written in Javascript with NodeJs and DiscordJs
 
 # Commands
+**In order to use commands you must start with the set prefix. In this bot it is "irl!".** \
+*ex; "irl!hours" will give hours*
 
 Command | Action | Optional Tags | Optional Tag functionality | Currently functional
 --------|--------|---------------|--------------------------- | --------------------
-**Say (embed) str** | Repeats back Str with optional Embed keyword | embed | embeds Str | **YES**
-**Quote** | Pulls random quote from [Adafruits quote API page](adafruit.com/quotes.php) | *N/A* | *N/A* | **YES**
-**Hours (space)** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES without tags**
-**Open (space)** | Sends if spaces are open/when they open/close | irl, irl2 | sends for specified space | **NO**
-**Machines (subset) (space)** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
-| | | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group 
-**Software (subset)** | lists software used | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
-**StaffOn (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **NO**
-**Upcoming (space)** | Lists upcoming events | irl, irl2 | specifies space | **NO**
-**Help** | Lists all commands | *N/A* | *N/A* | **NO**
+**say (embed) str** | Repeats back Str with optional Embed keyword | embed | embeds Str | **YES**
+**quote** | Pulls random quote from [Adafruits quote API page](adafruit.com/quotes.php) | *N/A* | *N/A* | **YES**
+**hours (space)** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
+**site** | links to the [irl site](http://irl.depaul.edu/) | *N/A* | *N/A* | **NO**
+**machines (subset) (space)** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
+machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group 
+**software (subset)** | lists software used | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
+**staff (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **NO**
+**upcoming (space)** | Lists upcoming events | irl, irl2 | specifies space | **NO**
+**help** | Lists all commands | *N/A* | *N/A* | **YES**
 
 For comments, questions or suggestions please contact Jacob B through discord or comment on this github repo.
 
@@ -22,10 +24,7 @@ For comments, questions or suggestions please contact Jacob B through discord or
 This bot will live in the IRL discord server and handle most IRL related things. I'm working on gettting all listed commands functional. The ones that will take the longest are the machine and software commands due to the need to scrape info from the [IRL website](http://irl.depaul.edu/equipment-and-resources/) or type everything into a repeatable JSON file to easily have the bot send, most likely the latter.
 
 ### Command Development Order
-1. Help
-1. Hours
-1. Open
-1. StaffOn
+1. Staff
 1. Software
 1. Machines
 1. Upcoming

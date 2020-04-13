@@ -1,14 +1,17 @@
-const environment = "dev"; // "prod"
+//const environment = "dev";
+const environment = "prod";
 
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
-const {quote} = require('./cmdQuote.js');
 const https = require('https');
-const {say} = require("./cmdSay");
 
 
-//const hoursEmbed = new MessageEmbed().setTitle("IRL and IRL2 Hours of operation").addField("IRL Hours", "Monday-Friday 10AM-9PM\nSaturday 10AM-5PM\nSunday Closed", true).addField("IRL2 Hours", "Monday-Friday 10AM-9PM\nSaturday-Sunday 10AM-5PM", true);
-const hoursEmbed = new MessageEmbed().setTitle("IRL and IRL2 Hours of operation").addField("IRL Hours", "Currently closed due to COVID-19", true).addField("IRL2 Hours", "Currently closed due to COVID-19", true);
+//Commands
+const {quote} = require('./commands/cmdQuote.js');
+const {notFunctional, notCMD} = require("./commands/cmdErrors");
+const {help, site} = require("./commands/cmdHelp");
+const {hours} = require("./commands/cmdHours");
+const {say} = require("./commands/cmdSay");
 
 
 const client = new Client({
@@ -40,22 +43,45 @@ client.on('message', async message =>{
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
+    switch (cmd) {
+        case "hours":
+            hours(message, args);
+            break;
 
-    if(cmd === "ping"){
-        const msg = await message.channel.send('Pong');
-    }
+        case "say":
+            say(message, args);
+            break;
 
-    if(cmd ==="hours"){
-        await message.channel.send(hoursEmbed);
-    }
+        case "quote":
+            quote(message);
+            break;
 
-    if(cmd === "say"){
-        say(message, args);
-    }
+        case "help":
+            help(message,args);
+            break;
 
+        case "site":
+            site(message);
+            break;
 
-    if(cmd === "quote"){
-        quote(message);
+        case "machines":
+            notFunctional(message);
+            break;
+
+        case "software":
+            notFunctional(message);
+            break;
+
+        case "staff":
+            notFunctional(message);
+            break;
+
+        case "upcoming":
+            notFunctional(message);
+            break;
+
+        default:
+            notCMD(message);
     }
 
 });
