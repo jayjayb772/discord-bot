@@ -11,11 +11,11 @@ const say = function(message, args){
         const embed = new MessageEmbed()
             .setTitle(`Message from ${message.author.username}`)
             .setColor(roleColor)
-            .setDescription(args.slice(1).join(" "));
+            .setDescription(args.slice().join(" "));
 
         message.channel.send(embed);
     }else{
-       message.channel.send(args[0]);
+       message.channel.send(args.slice().join(" "));
     }
 }
 
