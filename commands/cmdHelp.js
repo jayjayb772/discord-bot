@@ -12,15 +12,15 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").addField("How to
                                                                 .addField("help", "Lists all functional commands", false);
 
 
-const help = function(message, args){
+const help = async function(message, args){
     if(message.deletable) message.delete();
-    message.channel.send(helpmsg);
+    await message.channel.send(helpmsg);
 }
 
 
-const site = function(message){
+const site = async function(message){
     if(message.deletable) message.delete();
-    message.channel.send(new MessageEmbed().setTitle("IRL WEBSITE").setURL("http://irl.depaul.edu/"));
+    await message.channel.send(new MessageEmbed().setTitle("IRL WEBSITE").setURL("http://irl.depaul.edu/"));
 }
 
 exports.help = help;

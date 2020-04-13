@@ -12,16 +12,16 @@ const irl2Hours = new MessageEmbed().setTitle("IRL2 Hours of Operation").addFiel
 
 
 
-const hours = function(message, args){
+const hours = async function(message, args){
     if(message.deletable) message.delete();
    if(args[0] === "irl"){
-       message.channel.send(irlHours);
+       await message.channel.send(irlHours);
    }
    else if(args[0] === "irl2"){
-       message.channel.send(irl2Hours);
+       await message.channel.send(irl2Hours);
    }
    else {
-       message.channel.send(hoursEmbed);
+       await message.channel.send(hoursEmbed);
    }
 }
 

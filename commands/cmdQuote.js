@@ -6,7 +6,7 @@ const { MessageEmbed , Client} = require("discord.js");
 const options = {
     hostname: 'https://www.adafruit.com/api/quotes.php',
 }
-const quote = function(message){
+const quote = async function(message){
     if(message.deletable) message.delete();
     https.get(options.hostname, (resp) => {
         let data = '';

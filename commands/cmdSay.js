@@ -2,7 +2,7 @@ const https = require('https');
 const { MessageEmbed , Client} = require("discord.js");
 
 
-const say = function(message, args){
+const say = async function(message, args){
     if(message.deletable) message.delete();
     if(args.length < 1) return message.reply("Nothing to say?").then(m => m.delete(5000));
 
@@ -13,9 +13,9 @@ const say = function(message, args){
             .setColor(roleColor)
             .setDescription(args.slice().join(" "));
 
-        message.channel.send(embed);
+        await message.channel.send(embed);
     }else{
-       message.channel.send(args.slice().join(" "));
+       await message.channel.send(args.slice().join(" "));
     }
 }
 

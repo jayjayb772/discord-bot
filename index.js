@@ -46,23 +46,23 @@ client.on('message', async message =>{
     const cmd = args.shift().toLowerCase();
     switch (cmd) {
         case "hours":
-            hours(message, args);
+            await hours(message, args);
             break;
 
         case "say":
-            say(message, args);
+            await say(message, args);
             break;
 
         case "quote":
-            quote(message);
+            await quote(message);
             break;
 
         case "help":
-            help(message,args);
+            await help(message,args);
             break;
 
         case "site":
-            site(message);
+            await site(message);
             break;
 
         case "machines":
