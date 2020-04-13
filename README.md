@@ -20,7 +20,8 @@ For comments, questions or suggestions please contact Jacob B through discord or
 
 # Future plans
 This bot will live in the IRL discord server and handle most IRL related things. I'm working on gettting all listed commands functional. The ones that will take the longest are the machine and software commands due to the need to scrape info from the [IRL website](http://irl.depaul.edu/equipment-and-resources/) or type everything into a repeatable JSON file to easily have the bot send, most likely the latter.
-## command development order
+
+### Command Development Order
 1. Help
 1. Hours
 1. Open
