@@ -12,7 +12,7 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 **hours (space)** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
 **site** | links to the [irl site](http://irl.depaul.edu/) | *N/A* | *N/A* | **YES**
 **machines (subset) (space)** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
-machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group 
+machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
 **software (subset)** | lists software used | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
 **staff (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **NO**
 **upcoming (space)** | Lists upcoming events | irl, irl2 | specifies space | **NO**
