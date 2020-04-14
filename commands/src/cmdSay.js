@@ -34,11 +34,13 @@ const say = async function(message, args, environment){
 
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
-        const members = message.guild.members.fetch();
-        const managers = members.filter(m => m.roles.highest.id === process.env.Manager_ID);
-
-        managers.forEach((m) => {
-            //m.send(flagged);
+        const managers = await message.guild.roles.fetch(process.env.Manager_ID);
+        if(process.env.debug === "on") {
+            console.log(managers);
+            console.log(managers.members);
+        }
+        managers.members.forEach((m) => {
+            m.user.send(flagged);
             console.log(m.displayName);
         });
 
