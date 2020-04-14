@@ -7,7 +7,7 @@ const options = {
     hostname: 'https://www.adafruit.com/api/quotes.php',
 }
 const quote = async function(message){
-    if(message.deletable) message.delete();
+   // if(message.deletable) message.delete();
     https.get(options.hostname, (resp) => {
         let data = '';
         let author = '';

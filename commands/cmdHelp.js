@@ -14,13 +14,13 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").addField("How to
 
 
 const help = async function(message, args){
-    if(message.deletable) message.delete();
+    //if(message.deletable) message.delete();
     await message.channel.send(helpmsg);
 }
 
 
 const site = async function(message){
-    if(message.deletable) message.delete();
+    //if(message.deletable) message.delete();
     await message.channel.send(new MessageEmbed().setTitle("IRL WEBSITE").setURL("http://irl.depaul.edu/"));
 }
 

@@ -22,7 +22,7 @@ const staff = async function(message, args, environment){
         }else {
             mems.setDescription(online);
         }
-        if(message.deletable) message.delete();
+        //if(message.deletable) message.delete();
         await message.channel.send(mems);
     }
     else {

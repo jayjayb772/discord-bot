@@ -13,7 +13,7 @@ const irl2Hourscovid = new MessageEmbed().setTitle("IRL2 Hours of Operation").ad
 
 
 const hours = async function(message, args){
-    if(message.deletable) message.delete();
+    //if(message.deletable) message.delete();
    if(args[0] === "irl"){
        if(args[1] === "normal" || args[1] === "n"){
            await message.channel.send(irlHours);
