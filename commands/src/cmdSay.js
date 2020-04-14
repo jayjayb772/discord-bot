@@ -3,7 +3,7 @@ const { MessageEmbed , Client} = require("discord.js");
 
 
 const say = async function(message, args, environment){
-    const managers = await message.guild.roles.fetch(process.env.Manager_ID);
+    //const managers = await message.guild.roles.fetch(process.env.Manager_ID);
     //if(message.deletable) message.delete();
     if(args.length < 1) return message.reply("Nothing to say?").then(m => m.delete(5000));
     let bannedWords = process.env.banned_words.toString().substr(1,process.env.banned_words.toString().length-2).split(", ");
@@ -34,7 +34,11 @@ const say = async function(message, args, environment){
         await message.channel.send(args.join(" "));
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
-        managers.members.forEach((m) => {
+        const members = await message.guild.members.fetch();
+        //console.log(members);
+        const managers = members.filter(m => m.roles.cache.has(process.env.Manager_ID) === true);
+
+        managers.forEach((m) => {
             m.send(flagged);
         });
 
