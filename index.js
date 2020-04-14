@@ -92,11 +92,8 @@ client.on('message', async (message) =>{
 
 });
 
-if(process.env.environment === "dev") {
-    client.login(process.env.DEV_TOKEN);
-}else if(process.env.environment === "live"){
-    client.login(process.env.TOKEN);
-}
+client.login(process.env.TOKEN);
+
 
 
 
