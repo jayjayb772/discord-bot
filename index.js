@@ -33,14 +33,15 @@ client.on("ready",  async () =>{
 
 
 
-client.on('message', message =>{
+client.on('message', async (message) =>{
     const prefix = "irl!";
     if (message.author.bot) return;
     if(!message.guild) return;
     if(!message.content.startsWith(prefix)){
-       checkMessage(message, process.env.environment);
-        return;
+       await checkMessage(message);
+       return;
     }
+
 
     if(message.content.startsWith(prefix) && !message.author.bot){
         console.log(`${message.author.username} said ${message.content}`);
@@ -50,43 +51,43 @@ client.on('message', message =>{
     const cmd = args.shift().toLowerCase();
     switch (cmd) {
         case "hours":
-            hours(message, args);
+            await hours(message, args);
             break;
 
         case "say":
-            say(message, args, process.env.environment);
+            await say(message, args, process.env.environment);
             break;
 
         case "quote":
-            quote(message);
+            await quote(message);
             break;
 
         case "help":
-            help(message,args);
+            await help(message,args);
             break;
 
         case "site":
-            site(message);
+            await site(message);
             break;
 
         case "machines":
-            notFunctional(message);
+            await notFunctional(message);
             break;
 
         case "software":
-            notFunctional(message);
+            await notFunctional(message);
             break;
 
         case "staff":
-            staff(message,args, process.env.environment);
+            await staff(message,args, process.env.environment);
             break;
 
         case "upcoming":
-            notFunctional(message);
+            await notFunctional(message);
             break;
 
         default:
-            notCMD(message);
+            await notCMD(message);
     }
 
 });

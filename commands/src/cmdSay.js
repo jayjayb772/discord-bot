@@ -32,7 +32,7 @@ async function say(message, args, environment){
 
     }else{
 
-        const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
+  /*      const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
         let managers;
         managers = message.guild.roles;
@@ -48,22 +48,10 @@ async function say(message, args, environment){
             console.log(manager.displayName);
         });
 
-
-        // let managers = await message.guild.roles.fetch(process.env.Manager_ID);
-        // const man = managers.members.map(m=>m);
-        //
-        // if(process.env.debug === "on") {
-        //     console.log(managers);
-        //     console.log(man);
-        // }
-        //
-        // man.forEach((m) => {
-        //     m.user.send(flagged);
-        //     console.log(m.displayName);
-        // });
+   */
 
         await message.react(emoji);
-        await message.channel.send(args.join(" "));
+        //await message.channel.send(args.join(" "));
     }
 }
 
