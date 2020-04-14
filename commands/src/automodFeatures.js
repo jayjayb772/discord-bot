@@ -13,7 +13,7 @@ async function checkMessage(message) {
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
-        message.guild.roles.fetch(process.env.Manager_ID).then((managers)=>{
+        await message.guild.roles.fetch(process.env.Manager_ID).then((managers)=>{
             managers.members.forEach((user)=>{
                 user.send(flagged);
             })
