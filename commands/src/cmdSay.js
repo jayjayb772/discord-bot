@@ -7,9 +7,12 @@ const say = async function(message, args, environment){
     if(args.length < 1) return message.reply("Nothing to say?").then(m => m.delete(5000));
     let bannedWords = process.env.banned_words.toString().substr(1,process.env.banned_words.toString().length-2).split(", ");
     let safe = true;
+    const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
     bannedWords.forEach((word) =>{
-        if(args.includes(word)){
+        while(args.includes(word)){
             safe = false;
+            args.splice(args.indexOf(word), 1, emoji);
+            console.log(word);
         }
     });
 
@@ -27,7 +30,7 @@ const say = async function(message, args, environment){
         }
 
     }else{
-        await message.channel.send("Not repeating due to profanity")
+        await message.channel.send(args.join(" "));
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
         let managers;
         if(environment === "dev") {
@@ -38,7 +41,7 @@ const say = async function(message, args, environment){
         managers.members.forEach(m => {
             m.send(flagged);
         });
-        const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
+
         await message.react(emoji);
     }
 }
