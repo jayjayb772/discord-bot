@@ -19,11 +19,10 @@ async function checkMessage(message, environment) {
         const man = await managers.fetch(process.env.Manager_ID);
 
         if(process.env.debug === "on") {
-            //console.log(managers.members);
             console.log(managers);
             console.log(man);
         }
-        man.forEach((manager)=>{
+        man.members.forEach((manager)=>{
             manager.user.send(flagged);
             console.log(manager.displayName);
         });
