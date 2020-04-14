@@ -15,12 +15,12 @@ const checkMessage = async function (message, environment) {
     });
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-        const members = await message.guild.roles.cache.fetch(process.env.Manager_ID);
+        let members = await message.guild.roles.fetch();
 
         //const managers = members.filter(m => m.roles.cache.array().includes(process.env.Manager_ID) === true);
         if(process.env.debug === "on") {
+            console.log(members.cache);
             console.log(members);
-            console.log(members.members);
         }
         members.members.forEach((manager)=>{
             manager.user.send(flagged);

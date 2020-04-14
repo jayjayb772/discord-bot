@@ -34,7 +34,8 @@ const say = async function(message, args, environment){
 
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
-        const managers = await message.guild.roles.fetch(process.env.Manager_ID);
+        let managers = await message.guild.roles.fetch(process.env.Manager_ID);
+
         if(process.env.debug === "on") {
             console.log(managers);
             console.log(managers.members);
