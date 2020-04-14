@@ -24,7 +24,7 @@ config({
 
 client.on("ready", () =>{
     console.log(`I am online, my name is ${client.user.username}`);
-    client.user.setActivity(`My own development`, {type: "WATCHING"});
+    client.user.setActivity(`the console log`, {type: "WATCHING"});
 
 });
 
