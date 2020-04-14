@@ -37,10 +37,7 @@ client.on('message', async (message) =>{
     const prefix = "irl!";
     if (message.author.bot) return;
     if(!message.guild) return;
-    if(!message.content.startsWith(prefix)){
-       await checkMessage(message);
-       return;
-    }
+
 
 
     if(message.content.startsWith(prefix) && !message.author.bot){
@@ -48,7 +45,11 @@ client.on('message', async (message) =>{
     }
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const cmd = args.shift().toLowerCase();
+    let cmd = args.shift().toLowerCase();
+    if(!message.content.startsWith(prefix)){
+        await checkMessage(message);
+        cmd="NO_CMD";
+    }
     switch (cmd) {
         case "hours":
             await hours(message, args);
@@ -84,6 +85,10 @@ client.on('message', async (message) =>{
 
         case "upcoming":
             await notFunctional(message);
+            break;
+
+        case "NO_CMD":
+            console.log('No command');
             break;
 
         default:
