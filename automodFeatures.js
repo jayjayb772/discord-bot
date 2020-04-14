@@ -17,20 +17,14 @@ const checkMessage = async function (message, environment) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
         const members = await message.guild.members.fetch();
         //console.log(members);
-        const managers = members.filter(m => m.roles.cache.has(process.env.Manager_ID) === true);
+
+        const managers = members.filter(m => m.roles.highest.id === process.env.Manager_ID);
         //console.log(managers);
         managers.forEach((manager)=>{
             manager.send(flagged);
+            console.log(manager.displayName);
         })
 
-        /*
-        //roles.fetch(process.env.Manager_ID);
-        managers.members.forEach((m) => {
-            m.send(flagged);
-        });
-
-
-         */
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
         await message.react(emoji);
     }
