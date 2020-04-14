@@ -1,7 +1,7 @@
 const https = require('https');
 const {MessageEmbed, Client} = require("discord.js");
 
-const checkMessage = function (message, environment) {
+const checkMessage = async function (message, environment) {
 
 
 
@@ -15,7 +15,7 @@ const checkMessage = function (message, environment) {
     });
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-        const members = message.guild.members.fetch();
+        const members = await message.guild.members.fetch();
         //console.log(members);
 
         const managers = members.filter(m => m.roles.highest.id === process.env.Manager_ID);
@@ -27,7 +27,7 @@ const checkMessage = function (message, environment) {
         });
 
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
-        message.react(emoji);
+        await message.react(emoji);
     }
 }
 
