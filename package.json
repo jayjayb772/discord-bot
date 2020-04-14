@@ -18,6 +18,8 @@
   "homepage": "https://github.com/jayjayb772/discord-bot#readme",
   "dependencies": {
     "discord.js": "^12.1.1",
-    "dotenv": "^8.2.0"
-  }
+    "dotenv": "^8.2.0",
+    "mocha": "^7.1.1"
+  },
+  "devDependencies": {}
 }
