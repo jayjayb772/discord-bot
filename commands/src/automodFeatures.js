@@ -6,7 +6,7 @@ async function checkMessage(message) {
     //console.log(bannedWords);
     let safe = true;
     await bannedWords.forEach((word) => {
-        if (message.content.includes(word)) {
+        if (message.content.toLowerCase().includes(word)) {
             safe = false;
         }
     });
