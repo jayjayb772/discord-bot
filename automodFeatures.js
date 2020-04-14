@@ -2,8 +2,8 @@ const https = require('https');
 const {MessageEmbed, Client} = require("discord.js");
 
 const checkMessage = async function (message, environment) {
-    //const managers = await message.guild.roles.fetch(process.env.Manager_ID);
-    //console.log(managers.members);
+
+
 
     let bannedWords = process.env.banned_words.toString().substr(1, process.env.banned_words.toString().length - 2).split(", ");
     //console.log(bannedWords);
@@ -19,6 +19,7 @@ const checkMessage = async function (message, environment) {
         //console.log(members);
 
         const managers = await members.filter(m => m.roles.highest.id === process.env.Manager_ID);
+        console.log(managers.first().displayName);
         //console.log(managers);
         await managers.forEach((manager)=>{
             //manager.send(flagged);
