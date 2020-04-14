@@ -20,11 +20,14 @@ async function checkMessage(message, environment) {
 
         if(process.env.debug === "on") {
             console.log(managers);
-            console.log(man);
+            console.log(man.members);
         }
-        await man.members.map(m=>m).forEach((manager)=>{
+        const membs = man.members.map(m=>m.user);
+
+
+        membs.map(m=>m).forEach((manager)=>{
             //manager.user.send(flagged);
-            console.log(manager.displayName);
+            console.log(manager.username);
         });
 
 
