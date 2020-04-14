@@ -22,7 +22,7 @@ async function checkMessage(message, environment) {
             console.log(managers);
             console.log(man);
         }
-        man.members.forEach((manager)=>{
+        man.members.map(m=>m).forEach((manager)=>{
             //manager.user.send(flagged);
             console.log(manager.displayName);
         });
