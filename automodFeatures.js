@@ -11,26 +11,14 @@ async function checkMessage(message) {
         }
     });
     if (safe !== true) {
-        //const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-/*
-        let managers;
-        managers = message.guild.roles;
-        //console.log(managers);
-        const man = await managers.fetch(process.env.Manager_ID);
+        const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
-        if(process.env.debug === "on") {
-            //console.log(managers);
-            //console.log(man.members);
-        }
-        const membs = man.members.map(m=>m.user);
-
-
-        membs.forEach((manager)=>{
-            //manager.user.send(flagged);
-            //console.log(manager.username);
+        message.guild.roles.fetch(process.env.Manager_ID).then((managers)=>{
+            managers.members.map(m=>m.user).forEach((user)=>{
+                user.send(flagged);
+            })
         });
 
-*/
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
         await message.react(emoji);
     }

@@ -4,6 +4,7 @@ const { MessageEmbed , Client} = require("discord.js");
 
 async function staff(message, args, environment){
 
+
     //console.log(message.mentions.roles);
 
     if(args.length === 0){
