@@ -12,7 +12,7 @@ const say = async function(message, args, environment){
         while(args.includes(word)){
             safe = false;
             args.splice(args.indexOf(word), 1, emoji);
-            console.log(word);
+            //console.log(word);
         }
     });
 
@@ -32,12 +32,7 @@ const say = async function(message, args, environment){
     }else{
         await message.channel.send(args.join(" "));
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-        let managers;
-        if(environment === "dev") {
-            managers = await message.guild.roles.fetch(process.env.testmanager);
-        }else{
-            managers = await message.guild.roles.fetch(process.env.Manager_ID);
-        }
+        let managers = await message.guild.roles.fetch(process.env.Manager_ID);
         managers.members.forEach((m) => {
             m.send(flagged);
         });

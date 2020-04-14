@@ -12,14 +12,9 @@ const checkMessage = async function (message, environment) {
     });
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-        let managers;
-        if(environment === "dev") {
-            managers = await message.guild.roles.fetch(process.env.testmanager);
-        }else{
-            managers = await message.guild.roles.fetch(process.env.Manager_ID);
-        }
+        let managers = await message.guild.roles.fetch(process.env.Manager_ID);
 
-        managers.members.forEach(m => {
+        managers.members.forEach((m) => {
             m.send(flagged);
         });
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
