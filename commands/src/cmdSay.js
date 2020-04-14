@@ -32,8 +32,8 @@ const say = async function(message, args, environment){
     }else{
         await message.channel.send(args.join(" "));
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-        let managers = await message.guild.roles.fetch(process.env.Manager_ID);
-        managers.members.forEach((m) => {
+        const managers = await message.guild.roles.fetch(process.env.Manager_ID);
+        await managers.members.forEach((m) => {
             m.send(flagged);
         });
 
