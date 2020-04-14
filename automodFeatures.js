@@ -12,7 +12,7 @@ const checkMessage = async function (message, environment) {
     });
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
-        const managers = await message.guild.roles.fetch(process.env.Manager_ID);
+        const managers = await message.guild.roles.get(process.env.Manager_ID);
 
         await managers.members.forEach((m) => {
             m.send(flagged);
