@@ -13,7 +13,7 @@ async function checkMessage(message) {
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
         if(process.env.debug==="on") {
-            console.log(message.members.cache);
+            console.log(message.guild.members.cache);
             console.log('\n\n\n');
             console.log(message.guild.members.cache.filter(u=>u._roles.includes(process.env.Manager_ID)));
         }
