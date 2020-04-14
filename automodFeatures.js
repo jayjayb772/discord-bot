@@ -16,7 +16,7 @@ async function checkMessage(message, environment) {
         let managers;
         managers = message.guild.roles.cache.filter(role => role.id === "699655886511276032");
         console.log(managers);
-        const man = managers.members.map(m=>m);
+        const man = managers.members.filter(m=>m.user.presence !==null).map(m=>m.user);
         if(process.env.debug === "on") {
             console.log(managers.members);
             console.log(managers);
