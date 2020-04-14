@@ -6,12 +6,12 @@ const {checkMessage} = require("./automodFeatures");
 
 
 //Commands
-const {quote} = require('./commands/cmdQuote.js');
-const {notFunctional, notCMD} = require("./commands/cmdErrors");
-const {help, site} = require("./commands/cmdHelp");
-const {hours} = require("./commands/cmdHours");
-const {say} = require("./commands/cmdSay");
-const {staff} = require("./commands/cmdStaff");
+const {quote} = require('./commands/src/cmdQuote.js');
+const {notFunctional, notCMD} = require("./commands/src/cmdErrors");
+const {help, site} = require("./commands/src/cmdHelp");
+const {hours} = require("./commands/src/cmdHours");
+const {say} = require("./commands/src/cmdSay");
+const {staff} = require("./commands/src/cmdStaff");
 
 
 const client = new Client({
@@ -93,3 +93,4 @@ if(process.env.environment === "dev") {
 }else if(process.env.environment === "live"){
     client.login(process.env.TOKEN);
 }
+
