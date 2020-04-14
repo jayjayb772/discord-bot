@@ -2,7 +2,7 @@
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
-const {checkMessage} = require("./automodFeatures");
+const {checkMessage} = require("./commands/src/automodFeatures");
 
 
 //Commands
