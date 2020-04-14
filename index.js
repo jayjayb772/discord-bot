@@ -1,5 +1,3 @@
-const environment = "dev";
-//const environment = "prod";
 
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
@@ -37,7 +35,7 @@ client.on('message', async message =>{
     if (message.author.bot) return;
     if(!message.guild) return;
     if(!message.content.startsWith(prefix)){
-        await checkMessage(message, environment);
+        await checkMessage(message, process.env.environment);
         return;
     }
 
@@ -53,7 +51,7 @@ client.on('message', async message =>{
             break;
 
         case "say":
-            await say(message, args, environment);
+            await say(message, args, process.env.environment);
             break;
 
         case "quote":
@@ -77,7 +75,7 @@ client.on('message', async message =>{
             break;
 
         case "staff":
-            await staff(message,args, environment);
+            await staff(message,args, process.env.environment);
             break;
 
         case "upcoming":
@@ -90,8 +88,8 @@ client.on('message', async message =>{
 
 });
 
-if(environment === "dev") {
+if(process.env.environment === "dev") {
     client.login(process.env.DEV_TOKEN);
-}else if(environment === "prod"){
+}else if(process.env.environment === "live"){
     client.login(process.env.TOKEN);
 }
