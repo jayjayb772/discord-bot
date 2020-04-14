@@ -38,7 +38,7 @@ const say = async function(message, args, environment){
         const managers = members.filter(m => m.roles.highest.id === process.env.Manager_ID);
 
         managers.forEach((m) => {
-            m.send(flagged);
+            //m.send(flagged);
             console.log(m.displayName);
         });
 

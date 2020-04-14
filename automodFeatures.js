@@ -21,7 +21,7 @@ const checkMessage = async function (message, environment) {
         const managers = members.filter(m => m.roles.highest.id === process.env.Manager_ID);
         //console.log(managers);
         managers.forEach((manager)=>{
-            manager.send(flagged);
+            //manager.send(flagged);
             console.log(manager.displayName);
         })
 
