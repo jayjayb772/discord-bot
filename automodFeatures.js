@@ -14,11 +14,11 @@ async function checkMessage(message) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
         message.guild.roles.fetch(process.env.Manager_ID).then((managers)=>{
-            managers.members.map(m=>m.user).forEach((user)=>{
+            managers.members.forEach((user)=>{
                 user.send(flagged);
             })
         });
-
+//.map(m=>m.user)
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
         await message.react(emoji);
     }
