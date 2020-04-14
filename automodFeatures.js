@@ -16,8 +16,8 @@ async function checkMessage(message, environment) {
         let managers;
         managers = await message.guild.roles.fetch(process.env.Manager_ID).catch();
 
-        const man = await managers.members.map(m=>m);
-
+        const man = managers.members.map(m=>m);
+        console.log(managers);
         if(process.env.debug === "on") {
             console.log(managers.members);
             console.log(managers);
