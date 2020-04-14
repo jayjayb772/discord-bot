@@ -38,7 +38,7 @@ client.on('message', async message =>{
     if (message.author.bot) return;
     if(!message.guild) return;
     if(!message.content.startsWith(prefix)){
-        checkMessage(message, process.env.environment);
+        await checkMessage(message, process.env.environment);
         return;
     }
 

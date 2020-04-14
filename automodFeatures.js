@@ -2,9 +2,6 @@ const https = require('https');
 const {MessageEmbed, Client} = require("discord.js");
 
 async function checkMessage(message, environment) {
-
-
-
     let bannedWords = process.env.banned_words.toString().substr(1, process.env.banned_words.toString().length - 2).split(", ");
     //console.log(bannedWords);
     let safe = true;
@@ -17,7 +14,8 @@ async function checkMessage(message, environment) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
         let managers;
-        managers = await message.guild.roles.fetch(process.env.Manager_ID).finally();
+        managers = await message.guild.roles.fetch(process.env.Manager_ID);
+
         const man = await managers.members.map(m=>m);
 
         if(process.env.debug === "on") {
@@ -29,8 +27,6 @@ async function checkMessage(message, environment) {
             manager.user.send(flagged);
             console.log(manager.displayName);
         });
-
-
 
 
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
