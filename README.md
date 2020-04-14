@@ -1,6 +1,6 @@
 # discord-bot
 My first discord bot. Written in Javascript with NodeJs and DiscordJs
-
+Has auto-moderation and sends flagged messages to managers set in the environment variables.
 # Commands
 **In order to use commands you must start with the set prefix. In this bot it is "irl!".** \
 *ex; "irl!hours" will give hours*

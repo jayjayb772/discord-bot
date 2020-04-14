@@ -20,14 +20,7 @@ async function checkMessage(message) {
         message.guild.members.cache.filter(u=>u._roles.includes(process.env.Manager_ID)).forEach((user)=>{
             user.user.send(flagged);
         });
-        /*
-        await message.guild.roles.fetch(process.env.Manager_ID).then((managers)=>{
-            managers.members.map(m=>m.user).forEach((user)=>{
-                user.send(flagged)
-            })
-        });
 
-         */
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
         await message.react(emoji);
     }

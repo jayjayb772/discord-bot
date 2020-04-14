@@ -48,7 +48,7 @@ client.on('message', async (message) =>{
     let cmd = args.shift().toLowerCase();
     if(!message.content.startsWith(prefix)){
         await checkMessage(message);
-        cmd="NO_CMD";
+        return;
     }
     switch (cmd) {
         case "hours":
@@ -88,7 +88,6 @@ client.on('message', async (message) =>{
             break;
 
         case "NO_CMD":
-            console.log('No command');
             break;
 
         default:
@@ -97,7 +96,9 @@ client.on('message', async (message) =>{
 
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN).catch((error) =>{
+    console.log(error);
+});
 
 
 
