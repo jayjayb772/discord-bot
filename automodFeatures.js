@@ -14,9 +14,9 @@ async function checkMessage(message, environment) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
         let managers;
-        managers = message.guild.roles.cache.filter(role => role.id === "699655886511276032");
+        managers = message.guild.roles;
         console.log(managers);
-        const man = managers.members.filter(m=>m.user.presence !==null).map(m=>m.user);
+        const man = managers.fetch(process.env.Manager_ID);
         if(process.env.debug === "on") {
             console.log(managers.members);
             console.log(managers);
