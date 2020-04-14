@@ -11,6 +11,7 @@ async function staff(message, args, environment){
         let withRole;
         if(environment === "dev") {
             withRole = await message.guild.roles.fetch(process.env.testid);
+            console.log(withRole);
         }else{
             withRole = await message.guild.roles.fetch(process.env.STAFF_ID);
         }

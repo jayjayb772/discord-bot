@@ -9,7 +9,7 @@ async function say(message, args, environment){
     let bannedWords = process.env.banned_words.toString().substr(1,process.env.banned_words.toString().length-2).split(", ");
     let safe = true;
     const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
-    bannedWords.forEach((word) =>{
+    await bannedWords.forEach((word) =>{
         while(args.includes(word)){
             safe = false;
             args.splice(args.indexOf(word), 1, emoji);

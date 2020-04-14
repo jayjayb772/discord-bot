@@ -5,7 +5,7 @@ async function checkMessage(message, environment) {
     let bannedWords = process.env.banned_words.toString().substr(1, process.env.banned_words.toString().length - 2).split(", ");
     //console.log(bannedWords);
     let safe = true;
-    bannedWords.forEach((word) => {
+    await bannedWords.forEach((word) => {
         if (message.content.includes(word)) {
             safe = false;
         }
@@ -14,10 +14,9 @@ async function checkMessage(message, environment) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
         let managers;
-        managers = await message.guild.roles.filter(role => role.id === "699655886511276032");
+        managers = message.guild.roles.cache.filter(role => role.id === "699655886511276032");
         console.log(managers);
         const man = managers.members.map(m=>m);
-        console.log(managers);
         if(process.env.debug === "on") {
             console.log(managers.members);
             console.log(managers);
