@@ -33,12 +33,12 @@ client.on("ready",  async () =>{
 
 
 
-client.on('message', async message =>{
+client.on('message', message =>{
     const prefix = "irl!";
     if (message.author.bot) return;
     if(!message.guild) return;
     if(!message.content.startsWith(prefix)){
-        await checkMessage(message, process.env.environment);
+       checkMessage(message, process.env.environment);
         return;
     }
 
@@ -50,43 +50,43 @@ client.on('message', async message =>{
     const cmd = args.shift().toLowerCase();
     switch (cmd) {
         case "hours":
-            await hours(message, args);
+            hours(message, args);
             break;
 
         case "say":
-            await say(message, args, process.env.environment);
+            say(message, args, process.env.environment);
             break;
 
         case "quote":
-            await quote(message);
+            quote(message);
             break;
 
         case "help":
-            await help(message,args);
+            help(message,args);
             break;
 
         case "site":
-            await site(message);
+            site(message);
             break;
 
         case "machines":
-            await notFunctional(message);
+            notFunctional(message);
             break;
 
         case "software":
-            await notFunctional(message);
+            notFunctional(message);
             break;
 
         case "staff":
-            await staff(message,args, process.env.environment);
+            staff(message,args, process.env.environment);
             break;
 
         case "upcoming":
-            await notFunctional(message);
+            notFunctional(message);
             break;
 
         default:
-            await notCMD(message);
+            notCMD(message);
     }
 
 });
