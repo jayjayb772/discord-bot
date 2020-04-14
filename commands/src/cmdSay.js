@@ -38,7 +38,7 @@ const say = async function(message, args, environment){
         }else{
             managers = await message.guild.roles.fetch(process.env.Manager_ID);
         }
-        managers.members.forEach(m => {
+        managers.members.forEach((m) => {
             m.send(flagged);
         });
 
