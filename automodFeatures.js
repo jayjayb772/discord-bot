@@ -18,9 +18,9 @@ const checkMessage = async function (message, environment) {
         const members = await message.guild.members.fetch();
         //console.log(members);
 
-        const managers = members.filter(m => m.roles.highest.id === process.env.Manager_ID);
+        const managers = await members.filter(m => m.roles.highest.id === process.env.Manager_ID);
         //console.log(managers);
-        managers.forEach((manager)=>{
+        await managers.forEach((manager)=>{
             //manager.send(flagged);
             console.log(manager.displayName);
         })
