@@ -14,7 +14,7 @@ async function checkMessage(message, environment) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
 
         let managers;
-        managers = await message.guild.roles.fetch(process.env.Manager_ID);
+        managers = await message.guild.roles.fetch(process.env.Manager_ID).catch();
 
         const man = await managers.members.map(m=>m);
 
