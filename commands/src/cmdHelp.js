@@ -13,16 +13,15 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").addField("How to
                                                                 .setURL("https://github.com/jayjayb772/discord-bot");
 
 
-const help = async function(message, args){
+async function help(message, args){
     //if(message.deletable) message.delete();
     await message.channel.send(helpmsg);
 }
 
 
-const site = async function(message){
+async function site(message){
     //if(message.deletable) message.delete();
     await message.channel.send(new MessageEmbed().setTitle("IRL WEBSITE").setURL("http://irl.depaul.edu/"));
 }
 
-exports.help = help;
-exports.site = site;
+module.exports ={help, site};

@@ -1,7 +1,7 @@
 const https = require('https');
 const {MessageEmbed, Client} = require("discord.js");
 
-const checkMessage = async function (message, environment) {
+async function checkMessage(message, environment) {
 
 
 
@@ -18,7 +18,7 @@ const checkMessage = async function (message, environment) {
 
         let managers;
         managers = await message.guild.roles.fetch(process.env.Manager_ID);
-        const man = managers.members.map(m=>m);
+        const man = await managers.members.map(m=>m);
 
         if(process.env.debug === "on") {
             console.log(managers.members);
@@ -26,7 +26,7 @@ const checkMessage = async function (message, environment) {
             console.log(man);
         }
         man.forEach((manager)=>{
-            //manager.user.send(flagged);
+            manager.user.send(flagged);
             console.log(manager.displayName);
         });
 
@@ -38,4 +38,4 @@ const checkMessage = async function (message, environment) {
     }
 }
 
-exports.checkMessage = checkMessage;
+module.exports = {checkMessage};

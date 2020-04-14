@@ -2,7 +2,7 @@ const https = require('https');
 const { MessageEmbed , Client} = require("discord.js");
 
 
-const staff = async function(message, args, environment){
+async function staff(message, args, environment){
 
     //console.log(message.mentions.roles);
 
@@ -51,4 +51,4 @@ const staff = async function(message, args, environment){
 
 }
 
-exports.staff = staff;
+module.exports = {staff};

@@ -2,7 +2,7 @@ const https = require('https');
 const { MessageEmbed , Client} = require("discord.js");
 
 
-const say = async function(message, args, environment){
+async function say(message, args, environment){
     //const managers = await message.guild.roles.fetch(process.env.Manager_ID);
     //if(message.deletable) message.delete();
     if(args.length < 1) return message.reply("Nothing to say?").then(m => m.delete(5000));
@@ -44,7 +44,7 @@ const say = async function(message, args, environment){
         }
 
         man.forEach((m) => {
-            // m.user.send(flagged);
+            m.user.send(flagged);
             console.log(m.displayName);
         });
 
@@ -53,4 +53,4 @@ const say = async function(message, args, environment){
     }
 }
 
-exports.say = say;
+module.exports = {say};
