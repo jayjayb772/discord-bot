@@ -24,8 +24,11 @@ config({
 
 client.on("ready",  async () =>{
     console.log(`I am online, my name is ${client.user.username}`);
-    await client.user.setActivity(`bugs run rampant`, {type: "WATCHING"});
-
+    if(process.env.debug === "on") {
+        await client.user.setActivity(`bugs run rampant`, {type: "WATCHING"});
+    }else{
+        await client.user.setActivity(`irl!help`, {type: "PLAYING"});
+    }
 });
 
 

@@ -21,8 +21,8 @@ const checkMessage = async function (message, environment) {
         const man = managers.members.map(m=>m);
 
         if(process.env.debug === "on") {
-            // console.log(managers.members);
-            // console.log(managers);
+            console.log(managers.members);
+            console.log(managers);
             console.log(man);
         }
         man.forEach((manager)=>{
