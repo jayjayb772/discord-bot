@@ -2,6 +2,7 @@
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
+const {reportBug} = require("./commands/src/cmdBug");
 const {checkMessage} = require("./commands/src/automodFeatures");
 
 
@@ -47,7 +48,7 @@ client.on('message', async (message) =>{
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
     if(!message.content.startsWith(prefix)){
-        await checkMessage(message);
+        await checkMessage(message, convertTimestamp(message.createdTimestamp));
         return;
     }
     switch (cmd) {
@@ -87,6 +88,9 @@ client.on('message', async (message) =>{
             await notFunctional(message);
             break;
 
+        case "bug":
+            await reportBug(message, convertTimestamp(message.createdTimestamp));
+
         case "NO_CMD":
             break;
 
@@ -95,6 +99,14 @@ client.on('message', async (message) =>{
     }
 
 });
+
+function convertTimestamp(timestamp, offset = -6){
+    let d = new Date(timestamp);
+    let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    let nd = new Date(utc + (3600000*offset));
+    return nd.toLocaleString();
+}
+
 
 client.login(process.env.TOKEN).catch((error) =>{
     console.log(error);

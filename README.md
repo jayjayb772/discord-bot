@@ -18,6 +18,7 @@ machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenpr
 **staff (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **YES**
 **upcoming (space)** | Lists upcoming events | irl, irl2 | specifies space | **NO**
 **portal (channel)** | move you from one channel to another | channels | mention channel | **NO**
+**bug** | allows you to report a bug to set user easily | *N/A* | *N/A* | **NO**
 **help** | Lists all commands | *N/A* | *N/A* | **YES**
 
 For comments, questions or suggestions please contact Jacob B through discord or comment on this github repo.

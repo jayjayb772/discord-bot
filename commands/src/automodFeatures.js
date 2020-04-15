@@ -1,7 +1,7 @@
 const https = require('https');
 const {MessageEmbed, Client} = require("discord.js");
 
-async function checkMessage(message) {
+async function checkMessage(message,timestamp) {
     let bannedWords = process.env.banned_words.toString().substr(1, process.env.banned_words.toString().length - 2).split(", ");
     //console.log(bannedWords);
     let safe = true;
@@ -16,7 +16,7 @@ async function checkMessage(message) {
 
 
     if (safe !== true) {
-        const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
+        const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content).setFooter(timestamp);
         if(process.env.debug==="on") {
             console.log(message.guild.members.cache);
             console.log('\n\n\n');
