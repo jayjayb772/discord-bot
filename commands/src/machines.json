@@ -1,0 +1,37 @@
+{
+  "3D_Printing": {
+    "Dremel_3D45": {
+      "Build_area": [254,154,170]
+    }
+
+  },
+  "Laser_cutting": {
+    
+  },
+  "CNC_milling": {
+    
+  },
+  "Wood_shop": {
+    
+  },
+  "Vinyl_cutting": {
+    
+  },
+  "Textiles_sewing": {
+    
+  },
+  "Screen_printing": {
+    
+  },
+  "Circuit_soldering": {
+    
+  },
+  "Heat_form": {
+    
+  },
+  "Animation": {
+    
+  }
+  
+
+}

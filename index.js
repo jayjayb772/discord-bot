@@ -2,6 +2,7 @@
 const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
+const {machines} = require("./commands/src/cmdMachines");
 const {reportBug} = require("./commands/src/cmdBug");
 const {checkMessage} = require("./commands/src/automodFeatures");
 
@@ -13,7 +14,6 @@ const {help, site} = require("./commands/src/cmdHelp");
 const {hours} = require("./commands/src/cmdHours");
 const {say} = require("./commands/src/cmdSay");
 const {staff} = require("./commands/src/cmdStaff");
-
 
 const client = new Client({
     disableEveryone: true
@@ -30,6 +30,9 @@ client.on("ready",  async () =>{
     }else{
         await client.user.setActivity(`irl!help`, {type: "PLAYING"});
     }
+
+
+    client.guilds.cache.first().channels.cache.filter(channel => channel.id === process.env.onlineChannel).first().send(`Newly updated!`);
 });
 
 
@@ -73,7 +76,7 @@ client.on('message', async (message) =>{
             break;
 
         case "machines":
-            await notFunctional(message);
+            await machines(message);
             break;
 
         case "software":
