@@ -5,11 +5,16 @@ async function checkMessage(message) {
     let bannedWords = process.env.banned_words.toString().substr(1, process.env.banned_words.toString().length - 2).split(", ");
     //console.log(bannedWords);
     let safe = true;
-    await bannedWords.forEach((word) => {
-        if (message.content.toLowerCase().includes(word)) {
-            safe = false;
-        }
+
+    message.content.toLowerCase().toString().split(" ").forEach((word) =>{
+        bannedWords.forEach((bannedword)=>{
+            if(word === bannedword){
+                safe = false;
+            }
+        })
     });
+
+
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content);
         if(process.env.debug==="on") {
