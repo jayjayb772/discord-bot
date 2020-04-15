@@ -9,6 +9,7 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").addField("How to
                                                                 .addField("quote", "Gets quote from [Adafruit quote api](adafruit.com/quotes.php)",false)
                                                                 .addField("hours (irl/irl2)", "Sends hours of spaces with optional specifier tag", false)
                                                                 .addField("staff (role)", "Lists staff online, use role to specify specialties")
+                                                                .addField("bug (report)", "Sends a message directly to person in charge of bot to easily get bug reports", false )
                                                                 .addField("help", "Lists all functional commands", false)
                                                                 .setURL("https://github.com/jayjayb772/discord-bot");
 
