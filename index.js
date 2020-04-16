@@ -28,12 +28,12 @@ client.on("ready",  async () =>{
     console.log(`I am online, my name is ${client.user.username}`);
     if(process.env.debug === "on") {
         await client.user.setActivity(`bugs run rampant`, {type: "WATCHING"});
+        client.guilds.cache.first().channels.cache.filter(channel => channel.id === process.env.onlineChannel).first().send(`Newly updated!`).then(r => r.delete({timeout:5000}));
     }else{
         await client.user.setActivity(`irl!help`, {type: "PLAYING"});
     }
 
 
-    client.guilds.cache.first().channels.cache.filter(channel => channel.id === process.env.onlineChannel).first().send(`Newly updated!`);
 });
 
 
