@@ -11,6 +11,7 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").addField("New Fu
                                                                 .addField("hours (irl/irl2)", "Sends hours of spaces with optional specifier tag", false)
                                                                 .addField("staff (role)", "Lists staff online, use role to specify specialties")
                                                                 .addField("bug (report)", "Sends a message directly to person in charge of bot to easily get bug reports", false )
+                                                                .addField("machines", "Leads you through a reply menu to get info on machines in each space", false)
                                                                 .addField("help", "Lists all functional commands", false)
                                                                 .setURL("https://github.com/jayjayb772/discord-bot");
 
