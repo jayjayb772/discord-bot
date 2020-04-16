@@ -24,7 +24,9 @@
     "discord": "^0.8.2",
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
-    "mocha": "^7.1.1"
+    "fb": "^2.0.0",
+    "mocha": "^7.1.1",
+    "twit": "^2.2.11"
   },
   "devDependencies": {}
 }

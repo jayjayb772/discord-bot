@@ -5,7 +5,13 @@ const {machines} = require("./commands/src/cmdMachines");
 //const {machines} = require("./commands/src/cmdMachines");
 const {reportBug} = require("./commands/src/cmdBug");
 const {checkMessage} = require("./commands/src/automodFeatures");
+const Twit = require('twit');
 
+/*
+const {FB, FacebookApiException} = require('fb');
+const fbClient = FB.options({appId: process.env.facebookAppId, appSecret: process.env.facebookAppSecret, access_token:process.env.facebookAccessToken});
+FB.setAccessToken(process.env.facebookAccessToken);
+ */
 
 //Commands
 const {quote} = require('./commands/src/cmdQuote.js');
@@ -14,6 +20,7 @@ const {help, site} = require("./commands/src/cmdHelp");
 const {hours} = require("./commands/src/cmdHours");
 const {say} = require("./commands/src/cmdSay");
 const {staff} = require("./commands/src/cmdStaff");
+
 
 const client = new Client({
     disableEveryone: true
@@ -31,9 +38,8 @@ client.on("ready", async () => {
     } else {
         await client.user.setActivity(`irl!help`, {type: "PLAYING"});
     }
-
-
 });
+
 
 
 client.on('message', async (message) => {
@@ -96,7 +102,15 @@ client.on('message', async (message) => {
 
         case "NO_CMD":
             break;
+/*
+        case "fbtest":
+            FB.api(`me`, { access_token:process.env.facebookAccessToken}, function (res) {
+                console.log(res);
+            });
+            break;
 
+
+ */
         case "play":
             if (message.channel.id === process.env.musicListener) {
                 await notFunctional(message)
@@ -148,6 +162,23 @@ function convertTimestamp(timestamp, offset = -6) {
 
 client.login(process.env.TOKEN).catch((error) => {
     console.log(error);
+});
+
+
+
+const twitClient = new Twit({
+    consumer_key:process.env.twitterConsumerKey,
+    consumer_secret:process.env.twitterConsumerSecret,
+    access_token: process.env.twitterAccessToken,
+    access_token_secret: process.env.twitterAccessTokenSecret
+});
+
+const twitStream = twitClient.stream(`statuses/filter`, {follow:process.env.twitterIRLID});
+
+twitStream.on('tweet', function(tweet){
+    client.guilds.cache.first().channels.cache.filter(channel => channel.id === process.env.socialMdeiaChannel).fetch().then(channel =>{
+        channel.send(new MessageEmbed().setTitle(tweet.user).setDescription(tweet.text));
+    })
 });
 
 
