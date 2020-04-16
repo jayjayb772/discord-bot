@@ -2,11 +2,48 @@
   "categories": {
     "0": {
       "categoryName": "3D Printing",
+      "completed": true,
       "spaces": {
         "1": {
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "Dremel 3D45",
+              "build_area": "254mmm X 154mm X 170mm",
+              "type": "FDM",
+              "thickness": "100-400 microns",
+              "material_thickness": "1.75mm",
+              "materials": "PLA, PETG, Nylon",
+              "link": "https://digilab.dremel.com/products/3d45"
+            },
+            {
+              "name": "Formlabs Form2",
+              "build_area": "145mm X 145mm X 175mm",
+              "type": "SLA",
+              "materials": "Formlabs V3 Resin",
+              "material_thickness": "*N/A*",
+              "thickness": "25-100 microns",
+              "link": "https://formlabs.com/3d-printers/form-2/"
+            },
+            {
+              "name": "Lulzbot Mini",
+              "build_area": "152mm X 152mm X 158mm",
+              "type": "FDM",
+              "materials": "PLA, HIPS, PETG, Nylon, etc.",
+              "material_thickness": "3mm",
+              "thickness": "50-500 microns",
+              "link": "https://www.lulzbot.com/store/printers/lulzbot-mini"
+            },
+            {
+              "name": "Prusa I3 MK2",
+              "build_area": "250mm X 210mm X 200mm",
+              "type": "FDM",
+              "materials": "PLA, HIPS, PETG, Nylon, etc.",
+              "material_thickness": "1.75mm",
+              "thickness": "50-300 microns",
+              "link": "https://www.prusa3d.com/downloads/manual/prusa3d_manual_mk2_en.pdf"
+            }
           ]
         },
         "2": {
@@ -18,14 +55,45 @@
               "build_area": "254mmm X 154mm X 170mm",
               "type": "FDM",
               "thickness": "100-400 microns",
-              "materials": "PLA, PETG, Nylon"
+              "material_thickness": "1.75mm",
+              "materials": "PLA, PETG, Nylon",
+              "link": "https://digilab.dremel.com/products/3d45"
             },
             {
               "name": "Formlabs Form3",
               "build_area": "145mm X 145mm X 185mm",
               "type": "SLA",
               "materials": "Formlabs V3 Resin",
-              "thickness": "25-300 microns"
+              "material_thickness": "*N/A*",
+              "thickness": "25-300 microns",
+              "link": "https://formlabs.com/3d-printers/form-3/"
+            },
+            {
+              "name": "RAISE3D Pro2",
+              "build_area": "305mm X 305mm X 300mm",
+              "type": "FDM",
+              "materials": "PLA, HIPS, PETG, Nylon, etc.",
+              "material_thickness": "1.75",
+              "thickness": "10-200 microns",
+              "link": "https://www.raise3d.com/products/pro2-3d-printer/"
+            },
+            {
+              "name": "Prusa I3 MK3",
+              "build_area": "250mm X 210mm X 210mm",
+              "type": "FDM",
+              "materials": "PLA, HIPS, PETG, Nylon, etc.",
+              "material_thickness": "1.75mm",
+              "thickness": "50-300 microns",
+              "link": "https://shop.prusa3d.com/en/3d-printers/181-original-prusa-i3-mk3-3d-printer.html#1"
+            },
+            {
+              "name": "Prusa I3 MK2",
+              "build_area": "250mm X 210mm X 200mm",
+              "type": "FDM",
+              "materials": "PLA, HIPS, PETG, Nylon, etc.",
+              "material_thickness": "1.75mm",
+              "thickness": "50-300 microns",
+              "link": "https://www.prusa3d.com/downloads/manual/prusa3d_manual_mk2_en.pdf"
             }
           ]
         }
@@ -33,48 +101,189 @@
     },
     "1": {
       "categoryName": "Laser cutting",
-      "machines": [
-      ]
+      "completed": true,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+            {
+              "name": "Full Spectrum Pro",
+              "cut_area": "24\" x 16\"",
+              "engrave_area": "24\" x 16\"",
+              "laser_wattage": "90Watts",
+              "materials": "Wood, Paper, Cork, Acrylic, Anodized Metals",
+              "link": "https://fsl-public.s3.amazonaws.com/website/production/pdfs/Pro_Series_20x12_24x16_Manual_Laser_Cutter.pdf"
+            },
+            {
+              "name": "Full Spectrum Hobby",
+              "cut_area": "20\" x 12\"",
+              "engrave_area": "20\" x 12\"",
+              "laser_wattage": "40Watts",
+              "materials": "Wood, Paper, Cork, Acrylic, Anodized Metals",
+              "link": "https://fsl-public.s3.amazonaws.com/website/production/pdfs/Hobby%20Series%20Manual.pdf"
+          }
+            ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+            {
+              "name": "Dremel LC40",
+              "cut_area": "20\" x 12\"",
+              "engrave_area": "18.4\" x 12\"",
+              "laser_wattage": "40Watts",
+              "materials": "Wood, Paper, Cork, Acrylic, Anodized Metals",
+              "link": "https://digilab.dremel.com/products/lc40-laser-cutter"
+            }
+          ]
+        }
+      }
     },
     "2": {
       "categoryName": "CNC Milling",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "3": {
-      "categoryName": "Animation",
-      "machines": [
-      ]
+      "categoryName": "Animating",
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "4": {
       "categoryName": "Heat Forming",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "5": {
       "categoryName": "Circuits and Soldering",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "6": {
       "categoryName": "Screen Printing",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "7": {
       "categoryName": "Textiles and Sewing",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "8": {
       "categoryName": "Vinyl Cutting",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     },
     "9": {
       "categoryName": "Wood Shop",
-      "machines": [
-      ]
+      "completed": false,
+      "spaces":{
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+          ]
+        }
+      }
     }
   }
 }

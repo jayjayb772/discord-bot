@@ -3,8 +3,8 @@ const { MessageEmbed , Client} = require("discord.js");
 
 //const hoursEmbed = new MessageEmbed().setTitle("IRL and IRL2 Hours of operation").addField("IRL Hours", "Monday-Friday 10AM-9PM\nSaturday 10AM-5PM\nSunday Closed", true).addField("IRL2 Hours", "Monday-Friday 10AM-9PM\nSaturday-Sunday 10AM-5PM", true);
 
-const helpmsg = new MessageEmbed().setTitle("List of commands").addField("How to use commands", "In order to use commands you must start with the prefix \"irl!\" ", false)
-                                                                .addField("New Functionality", "I NOW DELETE MY REPLY MESSAGES AUTOMATICALLY AFTER 5-15 SECONDS.", false)
+const helpmsg = new MessageEmbed().setTitle("List of commands").addField("New Functionality", "I NOW DELETE MY REPLY MESSAGES AUTOMATICALLY AFTER 5-15 SECONDS.", false)
+                                                                .addField("How to use commands", "In order to use commands you must start with the prefix \"irl!\" ", false)
                                                                 .addField("say (embed) *str*", "repeats *str* with optional embed", false)
                                                                 .addField("site", "sends the link to the IRL website")
                                                                 .addField("quote", "Gets quote from [Adafruit quote api](adafruit.com/quotes.php)",false)

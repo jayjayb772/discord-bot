@@ -12,9 +12,8 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 **hours (space) *n*** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
 hours (cont.) | | n, normal | Implemented for COVID-19 to get normal hours of operation | **YES**
 **site** | links to the [irl site](http://irl.depaul.edu/) | *N/A* | *N/A* | **YES**
-**machines (subset) (space)** | Lists Machines with docs | irl, irl2 | Sends list for specified space | **NO**
-machines (cont.)| | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
-**software (subset)** | lists software used | 3Dprint, Lasercut, CNC, Woodshop, VinylCut, Sewing, Screenprint, Electronics | lists machines in group | **NO**
+**machines** | Lists Machines with docs | *REPLY MENU* | reply to it's messages to get info on specific machines | **IN PROGRESS**
+**software** | lists software used | *REPLY MENU* | lists machines in group | **NO**
 **staff (discordRole)** | Lists Staff on | discordRole | specify what specialty you need | **YES**
 **upcoming (space)** | Lists upcoming events | irl, irl2 | specifies space | **NO**
 **portal (channel)** | move you from one channel to another | channels | mention channel | **NO**
