@@ -16,23 +16,23 @@ async function hours(message, args){
     //if(message.deletable) message.delete();
    if(args[0] === "irl"){
        if(args[1] === "normal" || args[1] === "n"){
-           await message.channel.send(irlHours);
+           await message.channel.send(irlHours).then( m => m.delete({timeout:15000}));;
        }else {
-           await message.channel.send(irlHourscovid);
+           await message.channel.send(irlHourscovid).then( m => m.delete({timeout:15000}));;
        }
    }
    else if(args[0] === "irl2"){
        if(args[1] === "normal" || args[1] === "n"){
-           await message.channel.send(irl2Hours);
+           await message.channel.send(irl2Hours).then( m => m.delete({timeout:15000}));;
        }else {
-           await message.channel.send(irl2Hourscovid);
+           await message.channel.send(irl2Hourscovid).then( m => m.delete({timeout:15000}));;
        }
    }
    else {
        if (args[0] === "normal" || args[0] === "n") {
-           await message.channel.send(hoursEmbed);
+           await message.channel.send(hoursEmbed).then( m => m.delete({timeout:15000}));;
        } else {
-           await message.channel.send(hoursEmbedcovid);
+           await message.channel.send(hoursEmbedcovid).then( m => m.delete({timeout:15000}));;
        }
    }
 }

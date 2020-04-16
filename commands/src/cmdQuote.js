@@ -23,7 +23,7 @@ async function quote(message){
             author = JSON.parse(data)[0].author;
             const embed = new MessageEmbed().setTitle("Quote as requested:").setDescription(`"${text}"`).setFooter(`By: ${author}`);
 
-            message.channel.send(embed);
+            message.channel.send(embed).then( m => m.delete({timeout:20000}));;
         });
 
     }).on("error", (err) =>{

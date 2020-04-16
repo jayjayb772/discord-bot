@@ -3,6 +3,7 @@ const { MessageEmbed , Client} = require("discord.js");
 const { config } = require("dotenv");
 const https = require('https');
 const {machines} = require("./commands/src/cmdMachines");
+//const {machines} = require("./commands/src/cmdMachines");
 const {reportBug} = require("./commands/src/cmdBug");
 const {checkMessage} = require("./commands/src/automodFeatures");
 

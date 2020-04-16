@@ -25,13 +25,13 @@ async function staff(message, args, environment){
             mems.setDescription(online);
         }
         //if(message.deletable) message.delete();
-        await message.channel.send(mems);
+        await message.channel.send(mems).then( m => m.delete({timeout:15000}));
     }
     else {
         //specified role
 
         if (process.env.forbiden_roles.includes(message.mentions.roles.first().id)) {
-            await message.channel.send(`${message.mentions.roles.first().name} is not valid with this command, please use roles pertaining to IRL staff only`);
+            await message.channel.send(`${message.mentions.roles.first().name} is not valid with this command, please use roles pertaining to IRL staff only`).then( m => m.delete({timeout:5000}));;
         } else {
 
             const withRole = message.mentions.roles.first().members;
@@ -47,7 +47,7 @@ async function staff(message, args, environment){
                 mems.setDescription(online);
             }
             if(message.deletable) message.delete();
-            await message.channel.send(mems);
+            message.channel.send(mems).then( m => m.delete({timeout:15000}));;
         }
     }
 

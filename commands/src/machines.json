@@ -1,37 +1,80 @@
 {
-  "3D_Printing": {
-    "Dremel_3D45": {
-      "Build_area": [254,154,170]
+  "categories": {
+    "0": {
+      "categoryName": "3D Printing",
+      "spaces": {
+        "1": {
+          "spaceAbbreviation": "IRL",
+          "spaceName": "Idea Realization Lab",
+          "machines": [
+          ]
+        },
+        "2": {
+          "spaceAbbreviation": "IRL2",
+          "spaceName": "Idea Realization Lab 2",
+          "machines": [
+            {
+              "name": "Dremel 3D45",
+              "build_area": "254mmm X 154mm X 170mm",
+              "type": "FDM",
+              "thickness": "100-400 microns",
+              "materials": "PLA, PETG, Nylon"
+            },
+            {
+              "name": "Formlabs Form3",
+              "build_area": "145mm X 145mm X 185mm",
+              "type": "SLA",
+              "materials": "Formlabs V3 Resin",
+              "thickness": "25-300 microns"
+            }
+          ]
+        }
+      }
+    },
+    "1": {
+      "categoryName": "Laser cutting",
+      "machines": [
+      ]
+    },
+    "2": {
+      "categoryName": "CNC Milling",
+      "machines": [
+      ]
+    },
+    "3": {
+      "categoryName": "Animation",
+      "machines": [
+      ]
+    },
+    "4": {
+      "categoryName": "Heat Forming",
+      "machines": [
+      ]
+    },
+    "5": {
+      "categoryName": "Circuits and Soldering",
+      "machines": [
+      ]
+    },
+    "6": {
+      "categoryName": "Screen Printing",
+      "machines": [
+      ]
+    },
+    "7": {
+      "categoryName": "Textiles and Sewing",
+      "machines": [
+      ]
+    },
+    "8": {
+      "categoryName": "Vinyl Cutting",
+      "machines": [
+      ]
+    },
+    "9": {
+      "categoryName": "Wood Shop",
+      "machines": [
+      ]
     }
-
-  },
-  "Laser_cutting": {
-    
-  },
-  "CNC_milling": {
-    
-  },
-  "Wood_shop": {
-    
-  },
-  "Vinyl_cutting": {
-    
-  },
-  "Textiles_sewing": {
-    
-  },
-  "Screen_printing": {
-    
-  },
-  "Circuit_soldering": {
-    
-  },
-  "Heat_form": {
-    
-  },
-  "Animation": {
-    
   }
-  
-
 }
