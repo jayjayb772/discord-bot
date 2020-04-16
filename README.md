@@ -5,6 +5,8 @@ Has auto-moderation and sends flagged messages to managers set in the environmen
 **In order to use commands you must start with the set prefix. In this bot it is "irl!".** \
 *ex; "irl!hours" will give hours*
 
+**Regular use commands**
+
 Command | Action | Optional Tags | Optional Tag functionality | Currently functional
 --------|--------|---------------|--------------------------- | --------------------
 **say (embed) str** | Repeats back Str | embed | embeds Str | **YES**
@@ -19,6 +21,15 @@ hours (cont.) | | n, normal | Implemented for COVID-19 to get normal hours of op
 **portal (channel)** | move you from one channel to another | channels | mention channel | **NO**
 **bug (report)** | allows you to report a bug to set user easily | report | Enter a description of the bug and what is wrong to the best of your ability | **YES**
 **help** | Lists all commands | *N/A* | *N/A* | **YES**
+
+**Music channel commands**
+
+Command | Action | Optional Tags | Optional Tag functionality | Currently functional
+--------|--------|---------------|--------------------------- | --------------------
+**play (link)** | adds song from youtube link to music queue | link | youtube link, maximum 5 minutes | **NO**
+**skip** | skips current song | *N/A* | *N/A* | **NO**
+**pause** | pauses song where its at | *N/A* | *N/A* | **NO**
+**stop** | stops music bot from playing and clears queue | *N/A* | *N/A* | **NO**
 
 For comments, questions or suggestions please contact Jacob B through discord or comment on this github repo.
 
