@@ -48,7 +48,7 @@ function messageCompose(reply, space){
             return toSend;
 
         case "1":
-            toSend.setTitle(`${categories["0"].categoryName} in the ${location["spaceName"]}`);
+            toSend.setTitle(`${category.categoryName} in the ${location["spaceName"]}`);
             location["machines"].forEach((m) => {
                 toSend.addField(`${m["name"]}\n${m["link"]}`, `Cut Area: ${m["cut_area"]} \nEngrave Area: ${m["engrave_area"]} \nLaser Wattage: ${m["laser_wattage"]} \nMaterials: ${m["materials"]}`)
             });
