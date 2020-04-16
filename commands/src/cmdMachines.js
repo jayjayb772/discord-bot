@@ -6,27 +6,27 @@ let choices = "0 : 3D Printers \n1 : Laser Cutting \nAll choices below this line
 
 async function machines(message){
     const authFilter = m => m.author.id === message.author.id;
-    message.reply(new MessageEmbed().setTitle("What Machines would you like to know about").addField("Please type the category number",choices, false)).then(r => r.delete({timeout:10000}));
-    message.channel.awaitMessages(authFilter,{max:1, time:10000, dispose:true}).then(collected =>{
+    message.reply(new MessageEmbed().setTitle("What Machines would you like to know about").addField("Please type the category number",choices, false)).then(r => r.delete({timeout:5000}));
+    message.channel.awaitMessages(authFilter,{max:1, time:5000, dispose:true}).then(collected =>{
         if(!categories[collected.first().content].completed){
             collected.first().delete();
-            return message.channel.send(new MessageEmbed().setTitle("Incomplete data").setDescription(`Details on ${categories[collected.first().content].categoryName} are not currently available.\nInformation is being updated daily, please be patient as I enter all of the machine data manually.\nThank you,\nBot developer`)).then(r=> r.delete({timeout:10000}));
+            return message.channel.send(new MessageEmbed().setTitle("Incomplete data").setDescription(`Details on ${categories[collected.first().content].categoryName} are not currently available.\nInformation is being updated daily, please be patient as I enter all of the machine data manually.\nThank you,\nBot developer`)).then(r=> r.delete({timeout:7500}));
         }
-        collected.first().reply(new MessageEmbed().setTitle(`What Space would you like to look at for ${categories[collected.first().content]["categoryName"]}`).addField("Please type the space number","1 : IRL\n2 : IRL2", false)).then(r => r.delete({timeout:10000}));
+        collected.first().reply(new MessageEmbed().setTitle(`What Space would you like to look at for ${categories[collected.first().content]["categoryName"]}`).addField("Please type the space number","1 : IRL\n2 : IRL2", false)).then(r => r.delete({timeout:5000}));
         collected.first().delete();
-        message.channel.awaitMessages(authFilter, {max:1, time:10000, dispose:true}).then(space =>{
+        message.channel.awaitMessages(authFilter, {max:1, time:5000, dispose:true}).then(space =>{
 
             message.channel.send(messageCompose(collected.first().content, space.first().content)).then(r => r.delete({timeout:30000}))
             space.first().delete();
 
         }).catch((err) =>{
-            message.channel.send("No space given").then(r => r.delete({timeout:10000}));
+            message.channel.send("No space given").then(r => r.delete({timeout:5000}));
             console.log("No space given");
 
         });
 
     }).catch((err) =>{
-        message.channel.send("No type given").then(r => r.delete({timeout:10000}));
+        message.channel.send("No type given").then(r => r.delete({timeout:5000}));
         console.log("No type give");
         //console.log(err);
     });
