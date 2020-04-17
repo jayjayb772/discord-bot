@@ -1,17 +1,8 @@
 const {MessageEmbed, Client} = require("discord.js");
 const {config} = require("dotenv");
 const https = require('https');
-const {machines} = require("./commands/src/cmdMachines");
-//const {machines} = require("./commands/src/cmdMachines");
-const {reportBug} = require("./commands/src/cmdBug");
-const {checkMessage} = require("./commands/src/automodFeatures");
-const Twit = require('twit');
 
-/*
-const {FB, FacebookApiException} = require('fb');
-const fbClient = FB.options({appId: process.env.facebookAppId, appSecret: process.env.facebookAppSecret, access_token:process.env.facebookAccessToken});
-FB.setAccessToken(process.env.facebookAccessToken);
- */
+const Twit = require('twit');
 
 //Commands
 const {quote} = require('./commands/src/cmdQuote.js');
@@ -20,7 +11,9 @@ const {help, site} = require("./commands/src/cmdHelp");
 const {hours} = require("./commands/src/cmdHours");
 const {say} = require("./commands/src/cmdSay");
 const {staff} = require("./commands/src/cmdStaff");
-
+const {machines} = require("./commands/src/cmdMachines");
+const {reportBug} = require("./commands/src/cmdBug");
+const {checkMessage} = require("./commands/src/automodFeatures");
 
 const client = new Client({
     disableEveryone: true
@@ -102,15 +95,7 @@ client.on('message', async (message) => {
 
         case "NO_CMD":
             break;
-/*
-        case "fbtest":
-            FB.api(`me`, { access_token:process.env.facebookAccessToken}, function (res) {
-                console.log(res);
-            });
-            break;
 
-
- */
         case "play":
             if (message.channel.id === process.env.musicListener) {
                 await notFunctional(message)
