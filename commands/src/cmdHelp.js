@@ -19,7 +19,7 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").setColor(2762596
 
 async function help(message, args){
     if(message.deletable) message.delete();
-    await message.channel.send(helpmsg);
+    await message.channel.send(helpmsg).then( m => m.delete({timeout:20000}));
 }
 
 
