@@ -10,7 +10,7 @@ async function machines(message){
     message.channel.awaitMessages(authFilter,{max:1, time:5000, dispose:true}).then(collected =>{
         if(!categories[collected.first().content].completed){
             collected.first().delete();
-            return message.channel.send(new MessageEmbed().setTitle("Incomplete data").setDescription(`Details on ${categories[collected.first().content].categoryName} are not currently available.\nInformation is being updated daily, please be patient as I enter all of the machine data manually.\nThank you,\nBot developer`)).then(r=> r.delete({timeout:7500}));
+            return message.channel.send(new MessageEmbed().setTitle("Incomplete data").setDescription(`Details on ${categories[collected.first().content].categoryName} are not currently available.\nCheckout our website for details or ask a staff member!\nInformation is being updated daily, please be patient as I enter all of the machine data manually.\nThank you,\nBot developer`)).then(r=> r.delete({timeout:7500}));
         }
         collected.first().reply(new MessageEmbed().setTitle(`What Space would you like to look at for ${categories[collected.first().content]["categoryName"]}`).addField("Please type the space number","1 : IRL\n2 : IRL2", false)).then(r => r.delete({timeout:5000}));
         collected.first().delete();
