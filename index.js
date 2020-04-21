@@ -3,6 +3,7 @@ const {config} = require("dotenv");
 const https = require('https');
 
 const Twit = require('twit');
+const {welcome} = require("./commands/src/welcomeAcknowledge");
 
 //Commands
 const {quote} = require('./commands/src/cmdQuote.js');
@@ -27,7 +28,7 @@ client.on("ready", async () => {
     console.log(`I am online, my name is ${client.user.username}`);
     if (process.env.debug === "on") {
         await client.user.setActivity(`bugs run rampant`, {type: "WATCHING"});
-        client.guilds.cache.first().channels.cache.filter(channel => channel.id === process.env.onlineChannel).first().send(`Newly updated!`).then(r => r.delete({timeout: 5000}));
+        //client.guilds.cache.first().channels.cache.filter(channel => channel.id === process.env.onlineChannel).first().send(`Newly updated!`).then(r => r.delete({timeout: 5000}));
     } else {
         await client.user.setActivity(`irl!help`, {type: "PLAYING"});
     }
@@ -35,9 +36,15 @@ client.on("ready", async () => {
 
 
 
+client.on('guildMemberAdd', (member)=>{
+   welcome(member);
+});
+
+
 client.on('message', async (message) => {
     const prefix = "irl!";
-    if (message.author.bot) return;
+    if(message.author.bot) return;
+
     if (!message.guild) return;
 
 

@@ -29,6 +29,7 @@ async function checkMessage(message,timestamp) {
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
         await message.react(emoji);
     }
+    console.log(message);
 }
 
 module.exports = {checkMessage};
