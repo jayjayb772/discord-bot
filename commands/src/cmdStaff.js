@@ -26,6 +26,7 @@ async function staff(message, args, environment){
         }
         //if(message.deletable) message.delete();
         await message.channel.send(mems).then( m => m.delete({timeout:15000}));
+        message.delete();
     }
     else {
         //specified role

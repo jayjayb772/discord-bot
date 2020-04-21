@@ -18,9 +18,9 @@ async function checkMessage(message,timestamp) {
     if (safe !== true) {
         const flagged = new MessageEmbed().setTitle(`Flagged message from ${message.author.tag} in ${message.channel.name}`).setDescription(message.content).setFooter(timestamp);
         if(process.env.debug==="on") {
-            console.log(message.guild.members.cache);
-            console.log('\n\n\n');
-            console.log(message.guild.members.cache.filter(u=>u._roles.includes(process.env.Manager_ID)));
+            //console.log(message.guild.members.cache);
+            //console.log('\n\n\n');
+            //console.log(message.guild.members.cache.filter(u=>u._roles.includes(process.env.Manager_ID)));
         }
         message.guild.members.cache.filter(u=>u._roles.includes(process.env.Manager_ID)).forEach((user)=>{
             user.user.send(flagged);
@@ -29,7 +29,7 @@ async function checkMessage(message,timestamp) {
         const emoji = message.guild.emojis.cache.find(emoji =>emoji.name === 'AuthRequired');
         await message.react(emoji);
     }
-    console.log(message);
+    //console.log(message);
 }
 
 module.exports = {checkMessage};
