@@ -40,6 +40,10 @@ client.on('guildMemberAdd', (member)=>{
    welcome(member);
 });
 
+client.on('warn', function(info){
+    console.log(info);
+})
+
 
 client.on('message', async (message) => {
     const prefix = "irl!";

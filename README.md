@@ -44,6 +44,8 @@ This bot will live in the IRL discord server and handle most IRL related things.
 # Dev notes
 I'm working on learning the DiscordJs package and making discord bots. This is my first real discord bot project so it will take some time to work out bugs and get it to full functionality. I'm using **dotenv** for bot token and other api secrets storage to keep them off github and make switching between testing and production much simpler. The bot has Auto-moderator features that will flag messages with banned words and send a notification to managers.
 
+[Discordjs cheat sheet](https://gist.github.com/koad/316b265a91d933fd1b62dddfcc3ff584)
+
 #TODO for the future:
 * [Add instagram integration](https://github.com/pradel/node-instagram)
 * [Add facebook integration](https://github.com/node-facebook/facebook-node-sdk)
