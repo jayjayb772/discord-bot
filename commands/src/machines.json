@@ -149,12 +149,26 @@
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "carveArea": "",
+              "bits": ""
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "carveArea": "",
+              "bits": ""
+            }
           ]
         }
       }
@@ -185,12 +199,24 @@
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "formArea": ""
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "formArea": ""
+            }
           ]
         }
       }
@@ -203,12 +229,22 @@
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "useCase": ""
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "useCase": ""
+            }
           ]
         }
       }
@@ -221,12 +257,26 @@
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "colors": 2,
+              "screenGrain": ""
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "colors": 2,
+              "screenGrain": ""
+            }
           ]
         }
       }
@@ -239,30 +289,56 @@
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "stitches": "",
+              "altUse": ""
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "stitches": "",
+              "altUse": ""
+            }
           ]
         }
       }
     },
     "8": {
       "categoryName": "Vinyl Cutting",
-      "completed": false,
+      "completed": true,
       "spaces":{
         "1": {
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "Silhouette Cameo 3T",
+              "link": "https://www.silhouetteamerica.com/faq/solution/silhouette-cameo-3-overview",
+              "materials": "Vinyl",
+              "cutArea": "12\"x10'"
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "Silhouette Cameo 3",
+              "link": "https://www.silhouetteamerica.com/faq/solution/silhouette-cameo-3-overview",
+              "materials": "Vinyl",
+              "cutArea": "12\"x10'"
+            }
           ]
         }
       }
@@ -275,12 +351,24 @@
           "spaceAbbreviation": "IRL",
           "spaceName": "Idea Realization Lab",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "desc": ""
+            }
           ]
         },
         "2": {
           "spaceAbbreviation": "IRL2",
           "spaceName": "Idea Realization Lab 2",
           "machines": [
+            {
+              "name": "",
+              "link": "",
+              "materials": "",
+              "desc": ""
+            }
           ]
         }
       }

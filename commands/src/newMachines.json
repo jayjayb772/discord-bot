@@ -1,0 +1,246 @@
+{
+  "categories": {
+    "0": {
+      "categoryName": "3D Printing",
+      "completed": true,
+      "machines": [
+        {
+          "name": "Dremel 3D45",
+          "build_area": "254mmm X 154mm X 170mm",
+          "type": "FDM",
+          "thickness": "100-400 microns",
+          "material_thickness": "1.75mm",
+          "materials": "PLA, PETG, Nylon",
+          "link": "https://digilab.dremel.com/products/3d45",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 4
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 4
+            }
+          }
+        },
+        {
+        "name": "Formlabs Form2",
+        "build_area": "145mm X 145mm X 175mm",
+        "type": "SLA",
+        "materials": "Formlabs V3 Resin",
+        "material_thickness": "*N/A*",
+        "thickness": "25-100 microns",
+        "link": "https://formlabs.com/3d-printers/form-2/",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 1
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 0
+            }
+          }
+        },
+        {
+          "name": "Lulzbot Mini",
+          "build_area": "152mm X 152mm X 158mm",
+          "type": "FDM",
+          "materials": "PLA, HIPS, PETG, Nylon, etc.",
+          "material_thickness": "3mm",
+          "thickness": "50-500 microns",
+          "link": "https://www.lulzbot.com/store/printers/lulzbot-mini",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 2
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 0
+            }
+          }
+        },
+        {
+          "name": "Prusa I3 MK2",
+          "build_area": "250mm X 210mm X 200mm",
+          "type": "FDM",
+          "materials": "PLA, HIPS, PETG, Nylon, etc.",
+          "material_thickness": "1.75mm",
+          "thickness": "50-300 microns",
+          "link": "https://www.prusa3d.com/downloads/manual/prusa3d_manual_mk2_en.pdf",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 2
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 2
+            }
+          }
+        },
+        {
+          "name": "Formlabs Form3",
+          "build_area": "145mm X 145mm X 185mm",
+          "type": "SLA",
+          "materials": "Formlabs V3 Resin",
+          "material_thickness": "*N/A*",
+          "thickness": "25-300 microns",
+          "link": "https://formlabs.com/3d-printers/form-3/",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 0
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 1
+            }
+          }
+        },
+        {
+          "name": "RAISE3D Pro2",
+          "build_area": "305mm X 305mm X 300mm",
+          "type": "FDM",
+          "materials": "PLA, HIPS, PETG, Nylon, etc.",
+          "material_thickness": "1.75",
+          "thickness": "10-200 microns",
+          "link": "https://www.raise3d.com/products/pro2-3d-printer/",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 0
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 1
+            }
+          }
+        },
+        {
+          "name": "Prusa I3 MK3",
+          "build_area": "250mm X 210mm X 210mm",
+          "type": "FDM",
+          "materials": "PLA, HIPS, PETG, Nylon, etc.",
+          "material_thickness": "1.75mm",
+          "thickness": "50-300 microns",
+          "link": "https://shop.prusa3d.com/en/3d-printers/181-original-prusa-i3-mk3-3d-printer.html#1",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 2
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 2
+            }
+          }
+        }
+      ]
+    },
+    "1": {
+      "categoryName": "Laser cutting",
+      "completed": true,
+      "machines": [
+                {
+                  "name": "Full Spectrum Pro",
+                  "cut_area": "24\" x 16\"",
+                  "engrave_area": "24\" x 16\"",
+                  "laser_wattage": "90Watts",
+                  "materials": "Wood, Paper, Cork, Acrylic, Anodized Metals",
+                  "link": "https://fsl-public.s3.amazonaws.com/website/production/pdfs/Pro_Series_20x12_24x16_Manual_Laser_Cutter.pdf",
+                  "space": {
+                    "1": {
+                      "spaceName": "Idea Realization Lab",
+                      "abbreviation": "IRL",
+                      "quantity": 1
+                    },
+                    "2": {
+                      "spaceName": "Idea Realization Lab 2",
+                      "abbreviation": "IRL2",
+                      "quantity": 0
+                    }
+                  }
+                },
+                {
+                  "name": "Full Spectrum Hobby",
+                  "cut_area": "20\" x 12\"",
+                  "engrave_area": "20\" x 12\"",
+                  "laser_wattage": "40Watts",
+                  "materials": "Wood, Paper, Cork, Acrylic, Anodized Metals",
+                  "link": "https://fsl-public.s3.amazonaws.com/website/production/pdfs/Hobby%20Series%20Manual.pdf",
+                  "space": {
+                    "1": {
+                      "spaceName": "Idea Realization Lab",
+                      "abbreviation": "IRL",
+                      "quantity": 1
+                    },
+                    "2": {
+                      "spaceName": "Idea Realization Lab 2",
+                      "abbreviation": "IRL2",
+                      "quantity": 0
+                    }
+                  }
+                },
+                {
+                  "name": "Dremel LC40",
+                  "cut_area": "20\" x 12\"",
+                  "engrave_area": "18.4\" x 12\"",
+                  "laser_wattage": "40Watts",
+                  "materials": "Wood, Paper, Cork, Acrylic, Anodized Metals",
+                  "link": "https://digilab.dremel.com/products/lc40-laser-cutter",
+                  "space": {
+                    "1": {
+                      "spaceName": "Idea Realization Lab",
+                      "abbreviation": "IRL",
+                      "quantity": 0
+                    },
+                    "2": {
+                      "spaceName": "Idea Realization Lab 2",
+                      "abbreviation": "IRL2",
+                      "quantity": 2
+                    }
+                  }
+                }
+              ]
+    },
+    "2": {
+      "categoryName": "Laser cutting",
+      "completed": false,
+      "machines": [
+        {
+          "name": "",
+          "materials": "",
+          "link": "",
+          "space": {
+            "1": {
+              "spaceName": "Idea Realization Lab",
+              "abbreviation": "IRL",
+              "quantity": 0
+            },
+            "2": {
+              "spaceName": "Idea Realization Lab 2",
+              "abbreviation": "IRL2",
+              "quantity": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}
