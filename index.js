@@ -2,7 +2,7 @@ const {MessageEmbed, Client} = require("discord.js");
 const {config} = require("dotenv");
 const https = require('https');
 
-const Twit = require('twit');
+//const Twit = require('twit');
 const {poll} = require("./commands/src/cmdPoll");
 const {welcome} = require("./commands/src/welcomeAcknowledge");
 
@@ -166,7 +166,7 @@ client.login(process.env.TOKEN).catch((error) => {
     console.log(error);
 });
 
-
+/*
 
 const twitClient = new Twit({
     consumer_key:process.env.twitterConsumerKey,
@@ -184,6 +184,8 @@ twitStream.on('tweet', function(tweet){
 });
 
 
+
+ */
 
 
 
