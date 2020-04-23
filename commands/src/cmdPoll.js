@@ -76,7 +76,7 @@ async function poll(message, args) {
 
         await message.channel.awaitMessages(authFilter, {
             max: 1,
-            time: 10000,
+            time: 30000,
             dispose: true
         }).then(async function (collected) {
             //console.log(collected);
@@ -87,7 +87,7 @@ async function poll(message, args) {
             if (title === "exit") return;
 
             getOption(message, collected, authFilter, toReact).then(async function (temp) {
-
+                pollMessage.setTitle("New Poll");
                 message.channel.send(pollMessage).then(sentMessage => {
                     doReactions(sentMessage);
                     doDelete(message);
@@ -108,6 +108,7 @@ async function poll(message, args) {
         //await message.delete();
 
     }else{
+        pollMessage.setTitle("Poll Results");
         message.channel.messages.fetch(args[0]).then(async function(prevPoll){
             let reactions = prevPoll.reactions.cache.array();
 
