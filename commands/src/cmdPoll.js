@@ -41,7 +41,7 @@ async function getOption(message, collected, authFilter){
         const rTrue = user => true;
         await optionsMessage.first().channel.send(`Please react to **YOUR PREVIOUS** Message with the option ${option}`).then(r => toDelete.push({id:r.id}));
 
-        await optionsMessage.first().awaitReactions(rTrue, {max:1, time:10000}).then(async function(reactionInfo){
+        await optionsMessage.first().awaitReactions(rTrue, {max:1, time:30000}).then(async function(reactionInfo){
             //console.log(reactionInfo);
             let reactedEmoji = emoji.unemojify(reactionInfo.first().emoji.name);
             optionsMessage.first().react(emoji.emojify(reactedEmoji));
