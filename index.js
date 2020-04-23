@@ -3,6 +3,7 @@ const {config} = require("dotenv");
 const https = require('https');
 
 const Twit = require('twit');
+const {poll} = require("./commands/src/cmdPoll");
 const {welcome} = require("./commands/src/welcomeAcknowledge");
 
 //Commands
@@ -19,6 +20,8 @@ const {checkMessage} = require("./commands/src/automodFeatures");
 const client = new Client({
     disableEveryone: true
 });
+
+
 
 config({
     pah: __dirname + "/.env"
@@ -103,6 +106,9 @@ client.on('message', async (message) => {
 
         case "bug":
             await reportBug(message, convertTimestamp(message.createdTimestamp));
+
+        case "poll":
+            await poll(message);
 
         case "NO_CMD":
             break;

@@ -261,8 +261,8 @@
               "name": "",
               "link": "",
               "materials": "",
-              "colors": 2,
-              "screenGrain": ""
+              "colors": 4,
+              "screenGrain": "110, 220"
             }
           ]
         },
@@ -275,7 +275,7 @@
               "link": "",
               "materials": "",
               "colors": 2,
-              "screenGrain": ""
+              "screenGrain": "110, 220"
             }
           ]
         }
