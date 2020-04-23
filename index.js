@@ -108,7 +108,7 @@ client.on('message', async (message) => {
             await reportBug(message, convertTimestamp(message.createdTimestamp));
 
         case "poll":
-            await poll(message);
+            await poll(message, args);
 
         case "NO_CMD":
             break;

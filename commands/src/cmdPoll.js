@@ -1,56 +1,143 @@
 const { MessageEmbed , Client,} = require("discord.js");
+const emoji = require('node-emoji');
+
+let toReact = [];
+let pollMessage = new MessageEmbed();
+let toDelete = [];
 
 
+async function doReactions(message){
+    for( let i = 0; i<toReact.length; i++){
+        await message.react(emoji.emojify(toReact[i].emoji)).then(()=>{
+            if(i === toReact.length-1){
+                toReact =[];
+            }
+        });
+    }
 
+}
 
+async function doDelete(message){
+    for( let i =0; i< toDelete.length; i++) {
+        message.channel.messages.fetch(toDelete[i].id).then(m=> m.delete());
+        if(i === toDelete.length-1){
+            toDelete =[];
+        }
+    }
+}
 
-async function poll(message){
-    const reactionFilter = user => user.id === message.author.id;
-    const authFilter = m => m.author.id === message.author.id;
-    let pollMessage = new MessageEmbed();
-    let toReact = [];
-    message.reply(new MessageEmbed().setTitle("What would you like to title your poll?").addField("instructions","Please reply with the name of the poll\nExpires in 10 seconds\nType exit to cancel", false)).then(r => r.delete({timeout:10000}));
-    message.channel.awaitMessages(authFilter,{max:1, time:10000, dispose:true}).then(collected =>{
-        let title = collected.first();
-        //console.log(title);
-        pollMessage.setTitle(title);
-        if(title === "exit") return;
-        collected.first().reply(new MessageEmbed().setTitle("Please enter the 1st option").addField("instructions","Please type in an option\nType exit to cancel\nType done to finish adding options"));
-        message.channel.awaitMessages(authFilter, {max:1, time:30000, dispose:true}).then(optionsMessage =>{
-            let option = optionsMessage.first().content;
-            //console.log(option);
+async function getOption(message, collected, authFilter){
+    await collected.first().reply(new MessageEmbed().setTitle(`Please enter option ${toReact.length+1}`).addField("instructions","Please type in an option\nType exit to cancel\nType done to finish adding options")).then(r => toDelete.push({id:r.id}));;
 
-            optionsMessage.first().channel.send(`Please react to **YOUR PREVIOUS** Message with the ${option}`)
+    await message.channel.awaitMessages(authFilter, {max:1, time:30000, dispose:true}).then(async function(optionsMessage){
+        let option = optionsMessage.first().content;
+        toDelete.push({id:optionsMessage.first().id});
+        if(option === "done") return;
+        if(option === "exit"){
+            return;
+        }
+        //console.log(option);
+        const reactionFilter = users => users.reaction.id === optionsMessage.first().author.id;
+        const rTrue = user => true;
+        await optionsMessage.first().channel.send(`Please react to **YOUR PREVIOUS** Message with the option ${option}`).then(r => toDelete.push({id:r.id}));
 
-            optionsMessage.first().awaitReactions(reactionFilter, {max:1, time:10000, errors:['time']}).then(reactionInfo =>{
-                let reaction = reactionInfo.first().emoji.name;
-                console.log(reaction);
-            }).catch(err =>{
-                console.log(err);
-            });
-
-
-        }).catch((err) =>{
+        await optionsMessage.first().awaitReactions(rTrue, {max:1, time:10000}).then(async function(reactionInfo){
+            //console.log(reactionInfo);
+            let reactedEmoji = emoji.unemojify(reactionInfo.first().emoji.name);
+            optionsMessage.first().react(emoji.emojify(reactedEmoji));
+            toReact.push({option:option,emoji:reactedEmoji});
+            pollMessage.addField(`Option ${toReact.length}`, `${emoji.emojify(reactedEmoji)} : ${option}`);
+            console.log(toReact);
+            return getOption(message, collected, authFilter);
+            // let reaction = reactionInfo.first().emoji.name;
+            // console.log(reaction);
+        }).catch(err =>{
             console.log(err);
-            console.log("options error");
-        })
+        });
+
 
     }).catch((err) =>{
         console.log(err);
-        console.log("title error");
+        console.log("options error");
     });
-    message.delete();
+
+
 }
 
 
-async function splitOptions(ops){
-    let arr = ops.split(',');
-    for( let i = 0; i<arr.length; i++){
-        arr[i] = arr[i].trim();
+
+async function poll(message, args) {
+    if (args.length === 0) {
+
+        const authFilter = m => m.author.id === message.author.id;
+
+
+        message.reply(new MessageEmbed().setTitle("What would you like to title your poll?").addField("instructions", "Please reply with the name of the poll\nExpires in 10 seconds\nType exit to cancel", false)).then(r => toDelete.push({id:r.id}));;
+
+        await message.channel.awaitMessages(authFilter, {
+            max: 1,
+            time: 10000,
+            dispose: true
+        }).then(async function (collected) {
+            //console.log(collected);
+            toDelete.push({id:collected.first().id});
+            let title = collected.first().content;
+            console.log(title);
+            pollMessage.setTitle(title);
+            if (title === "exit") return;
+
+            getOption(message, collected, authFilter, toReact).then(async function (temp) {
+
+                message.channel.send(pollMessage).then(sentMessage => {
+                    doReactions(sentMessage);
+                    doDelete(message);
+                    message.delete();
+
+                    pollMessage = new MessageEmbed();
+                }).catch((err) => {
+                    console.log(err);
+                });
+
+            });
+
+
+        }).catch((err) => {
+            console.log(err);
+            console.log("title error");
+        });
+        //await message.delete();
+
+    }else{
+        message.channel.messages.fetch(args[0]).then(async function(prevPoll){
+            let reactions = prevPoll.reactions.cache.array();
+
+            let index =0;
+            let highest=0;
+            pollMessage.setTitle(`Results from ${prevPoll.embeds[0].title}`);
+            //console.log(reactions.length);
+            for(let i = 0; i<reactions.length; i++){
+                pollMessage.addField(`Option ${i+1}`, `${prevPoll.embeds[0].fields[i].value}\nTotal count: ${reactions[i].count-1}`);
+                if(reactions[i].count-1 > highest){
+                    highest = reactions[i].count-1;
+                    index = i;
+                }
+            }
+            pollMessage.addField('Winner', `${prevPoll.embeds[0].fields[index].value} is the winner with ${reactions[index].count-1} votes`);
+            message.channel.send(pollMessage).then(r => {
+                r.delete({timeout: 10000});
+                pollMessage = new MessageEmbed();
+            });
+            message.delete();
+
+
+        }).catch((err)=>{
+            console.log(err);
+        })
     }
-    return arr;
-
-
 }
+
+
+
+
 
 module.exports = {poll};

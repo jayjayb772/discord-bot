@@ -11,6 +11,7 @@ Command | Action | Optional Tags | Optional Tag functionality | Currently functi
 --------|--------|---------------|--------------------------- | --------------------
 **say (embed) str** | Repeats back Str | embed | embeds Str | **YES**
 **quote** | Pulls random quote from [Adafruits quote API page](adafruit.com/quotes.php) | *N/A* | *N/A* | **YES**
+**poll (prev ID)** | leads you through instructions to make reaction polls | prev_id | Message ID of a previous poll to get winner | **YES**
 **hours (space) *n*** | Sends hours of both spaces | irl, irl2 | sends hours of specified space | **YES**
 hours (cont.) | | n, normal | Implemented for COVID-19 to get normal hours of operation | **YES**
 **site** | links to the [irl site](http://irl.depaul.edu/) | *N/A* | *N/A* | **YES**
