@@ -7,6 +7,7 @@ const helpmsg = new MessageEmbed().setTitle("List of commands").setColor(2762596
                                                                 .addField("New Functionality", "I NOW DELETE MY REPLY MESSAGES AUTOMATICALLY AFTER 5-15 SECONDS.", false)
                                                                 .addField("How to use commands", "In order to use commands you must start with the prefix \"irl!\" ", false)
                                                                 .addField("say (embed) *str*", "repeats *str* with optional embed", false)
+                                                                .addField("poll (prev_id)", "guides you through setting up a reaction poll", false)
                                                                 .addField("site", "sends the link to the IRL website")
                                                                 .addField("quote", "Gets quote from [Adafruit quote api](adafruit.com/quotes.php)",false)
                                                                 .addField("hours (irl/irl2)", "Sends hours of spaces with optional specifier tag", false)
