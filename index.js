@@ -39,8 +39,9 @@ client.on("ready", async () => {
 
 
 
-client.on('guildMemberAdd', (member)=>{
-   welcome(member);
+client.on('guildMemberAdd', function(member){
+   console.log(`New member: ${member.user.tag}`);
+    //welcome(member);
 });
 
 client.on('warn', function(info){
