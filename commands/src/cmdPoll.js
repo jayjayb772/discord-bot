@@ -125,7 +125,6 @@ async function poll(message, args) {
             }
             pollMessage.addField('Winner', `${prevPoll.embeds[0].fields[index].value} is the winner with ${reactions[index].count-1} votes`);
             message.channel.send(pollMessage).then(r => {
-                r.delete({timeout: 10000});
                 pollMessage = new MessageEmbed();
             });
             message.delete();
