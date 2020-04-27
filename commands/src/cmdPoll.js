@@ -22,7 +22,6 @@ async function doDelete(message){
         message.channel.messages.fetch(toDelete[i].id).then(m=> m.delete());
         if(i === toDelete.length-1){
             toDelete =[];
-            message.delete();
         }
     }
 }
@@ -35,7 +34,7 @@ async function getOption(message, collected, authFilter){
         toDelete.push({id:optionsMessage.first().id});
         if(option === "done") return;
         if(option === "exit"){
-            await doDelete(message).catch(err=>{
+            doDelete(message).catch(err=>{
                 console.log(err);
             });
             return;
