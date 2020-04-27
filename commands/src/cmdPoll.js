@@ -70,6 +70,9 @@ async function getOption(message, collected, authFilter){
 
 
 async function poll(message, args) {
+
+    toReact = [];
+    toDelete = [];
     if (args.length === 0) {
 
         const authFilter = m => m.author.id === message.author.id;
