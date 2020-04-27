@@ -22,6 +22,7 @@ async function doDelete(message){
         message.channel.messages.fetch(toDelete[i].id).then(m=> m.delete());
         if(i === toDelete.length-1){
             toDelete =[];
+            message.delete();
         }
     }
 }
@@ -34,6 +35,9 @@ async function getOption(message, collected, authFilter){
         toDelete.push({id:optionsMessage.first().id});
         if(option === "done") return;
         if(option === "exit"){
+            await doDelete(message).catch(err=>{
+                console.log(err);
+            });
             return;
         }
         //console.log(option);
@@ -79,15 +83,21 @@ async function poll(message, args) {
             time: 30000,
             dispose: true
         }).then(async function (collected) {
+
             //console.log(collected);
             toDelete.push({id:collected.first().id});
             let title = collected.first().content;
             console.log(title);
             pollMessage.setTitle(title);
-            if (title === "exit") return;
+            if (title === "exit"){
+                await doDelete(message);
+                return;
+            }
 
             getOption(message, collected, authFilter, toReact).then(async function (temp) {
-                pollMessage.setTitle("New Poll");
+                if(toReact.length === 0){
+                    return;
+                }
                 message.channel.send(pollMessage).then(sentMessage => {
                     doReactions(sentMessage);
                     doDelete(message);
