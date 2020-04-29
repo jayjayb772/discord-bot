@@ -47,7 +47,7 @@ I'm working on learning the DiscordJs package and making discord bots. This is m
 
 [Discordjs cheat sheet](https://gist.github.com/koad/316b265a91d933fd1b62dddfcc3ff584)
 
-#TODO for the future:
+# TODO for the future:
 * [Add instagram integration](https://github.com/pradel/node-instagram)
 * [Add facebook integration](https://github.com/node-facebook/facebook-node-sdk)
 * [Add twitter integration](https://www.npmjs.com/package/twitter)
