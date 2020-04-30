@@ -29,4 +29,12 @@ async function site(message){
     await message.channel.send(new MessageEmbed().setTitle("IRL WEBSITE").setURL("http://irl.depaul.edu/")).then( m => m.delete({timeout:20000}));
 }
 
+
+
+
+
+
+
+
+
 module.exports ={help, site};

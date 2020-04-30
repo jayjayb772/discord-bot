@@ -26,15 +26,20 @@ async function doDelete(message){
     }
 }
 
-async function getOption(message, collected, authFilter){
-    await collected.first().reply(new MessageEmbed().setTitle(`Please enter option ${toReact.length+1}`).addField("instructions","Please type in an option\nType exit to cancel\nType done to finish adding options")).then(r => toDelete.push({id:r.id}));;
+async function getOption(message, collected, authFilter) {
+    await collected.first().reply(new MessageEmbed().setTitle(`Please enter option ${toReact.length + 1}`).addField("instructions", "Please type in an option\nType exit to cancel\nType done to finish adding options")).then(r => toDelete.push({id: r.id}));
+    ;
 
-    await message.channel.awaitMessages(authFilter, {max:1, time:30000, dispose:true}).then(async function(optionsMessage){
+    await message.channel.awaitMessages(authFilter, {
+        max: 1,
+        time: 30000,
+        dispose: true
+    }).then(async function (optionsMessage) {
         let option = optionsMessage.first().content;
-        toDelete.push({id:optionsMessage.first().id});
-        if(option === "done") return;
-        if(option === "exit"){
-            doDelete(message).catch(err=>{
+        toDelete.push({id: optionsMessage.first().id});
+        if (option === "done") return;
+        if (option === "exit") {
+            doDelete(message).catch(err => {
                 console.log(err);
             });
             return;
@@ -42,30 +47,31 @@ async function getOption(message, collected, authFilter){
         //console.log(option);
         const reactionFilter = users => users.reaction.id === optionsMessage.first().author.id;
         const rTrue = user => true;
-        await optionsMessage.first().channel.send(`Please react to **YOUR PREVIOUS** Message with the option ${option}`).then(r => toDelete.push({id:r.id}));
+        await optionsMessage.first().channel.send(`Please react to **YOUR PREVIOUS** Message with the option ${option}`).then(r => toDelete.push({id: r.id}));
 
-        await optionsMessage.first().awaitReactions(rTrue, {max:1, time:30000}).then(async function(reactionInfo){
+        await optionsMessage.first().awaitReactions(rTrue, {max: 1, time: 30000}).then(async function (reactionInfo) {
             //console.log(reactionInfo);
             let reactedEmoji = emoji.unemojify(reactionInfo.first().emoji.name);
             optionsMessage.first().react(emoji.emojify(reactedEmoji));
-            toReact.push({option:option,emoji:reactedEmoji});
+            toReact.push({option: option, emoji: reactedEmoji});
             pollMessage.addField(`Option ${toReact.length}`, `${emoji.emojify(reactedEmoji)} : ${option}`);
             console.log(toReact);
             return getOption(message, collected, authFilter);
             // let reaction = reactionInfo.first().emoji.name;
             // console.log(reaction);
-        }).catch(err =>{
+        }).catch(err => {
             console.log(err);
         });
 
 
-    }).catch((err) =>{
+    }).catch((err) => {
         console.log(err);
         console.log("options error");
     });
 
 
 }
+
 
 
 

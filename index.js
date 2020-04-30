@@ -2,6 +2,7 @@ const {MessageEmbed, Client} = require("discord.js");
 const {config} = require("dotenv");
 const https = require('https');
 
+
 //const Twit = require('twit');
 const {poll} = require("./commands/src/cmdPoll");
 const {welcome} = require("./commands/src/welcomeAcknowledge");
@@ -16,6 +17,7 @@ const {staff} = require("./commands/src/cmdStaff");
 const {machines} = require("./commands/src/cmdMachines");
 const {reportBug} = require("./commands/src/cmdBug");
 const {checkMessage} = require("./commands/src/automodFeatures");
+//const {collectPic} = require("./commands/src/petPicCollector");
 
 const client = new Client({
     disableEveryone: true
@@ -64,6 +66,11 @@ client.on('message', async (message) => {
     let cmd = args.shift().toLowerCase();
     if (!message.content.startsWith(prefix)) {
         await checkMessage(message, convertTimestamp(message.createdTimestamp));
+        /*
+        if(message.channel.id === process.env.petPicsChannel){
+            await collectPic(message);
+        }
+        */
         return;
     }
 
