@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jayjayb772/discord-bot#readme",
   "dependencies": {
-    "aws-sdk": "^2.667.0",
+    "aws-sdk": "^2.814.0",
     "discord": "^0.8.2",
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
